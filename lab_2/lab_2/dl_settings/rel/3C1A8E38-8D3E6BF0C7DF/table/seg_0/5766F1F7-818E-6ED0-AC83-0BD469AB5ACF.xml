@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5766F1F7-818E-6ED0-AC83-0BD469AB5ACF" name="actor">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 16:03:33 UTC</createdTime>
+<generatorID>85A44F94-689E-D80A-499C-4089DC1E3563</generatorID>
+<ownerDesignName>dl_settings</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="321288E4-214C-1F11-1A0C-157EAF9BF80A">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 16:03:33 UTC</createdTime>
+<generatorID>2E53B154-7884-BDAD-316F-6D88C09F0A4E</generatorID>
+<ownerDesignName>dl_settings</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="E4ED363A-2691-A087-35EB-4B39A2EFC9EF">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 16:03:33 UTC</createdTime>
+<generatorID>8C6902FC-A5AA-17D5-ADC7-1AC6E6C2A36F</generatorID>
+<ownerDesignName>dl_settings</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="original_name" id="45D8D36E-660F-7799-A176-5BDF09B9D2EB">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 16:03:33 UTC</createdTime>
+<generatorID>A31C7C08-7B5A-8B3E-32F3-17D60BFDD05A</generatorID>
+<ownerDesignName>dl_settings</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="675A0BF5-92F6-B0D4-1685-DBD59AB4090D" name="actor_PK">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 16:03:33 UTC</createdTime>
+<generatorID>EF230E62-E391-AD7B-9833-C77C5D3AC492</generatorID>
+<ownerDesignName>dl_settings</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="321288E4-214C-1F11-1A0C-157EAF9BF80A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

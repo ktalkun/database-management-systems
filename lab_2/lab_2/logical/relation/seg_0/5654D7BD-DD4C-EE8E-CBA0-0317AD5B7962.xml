@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="movie_actor" directorySegmentName="seg_0" id="5654D7BD-DD4C-EE8E-CBA0-0317AD5B7962">
+<createdBy>kirill</createdBy>
+<createdTime>2020-09-22 17:33:21 UTC</createdTime>
+<ownerDesignName>lab_2</ownerDesignName>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
+</engineerTo>
+<sourcePk>2D16CDDF-2A84-8CDA-99BE-C4C0FD414DC7</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>C05FE36A-75B3-A845-9934-7A5732E8BA9A</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>85A44F94-689E-D80A-499C-4089DC1E3563</targetEntity>
+<transferable>true</transferable>
+<deleteRule>SET NULL</deleteRule>
+</Relation>
