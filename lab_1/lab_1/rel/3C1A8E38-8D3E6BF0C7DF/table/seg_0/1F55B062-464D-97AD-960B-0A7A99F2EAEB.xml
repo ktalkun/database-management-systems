@@ -1,0 +1,147 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1F55B062-464D-97AD-960B-0A7A99F2EAEB" name="movie">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:53 UTC</createdTime>
+<generatorID>C05FE36A-75B3-A845-9934-7A5732E8BA9A</generatorID>
+<ownerDesignName>lab_1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="8255F05F-32E4-01DF-4FA7-54E115C60BB7">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:53 UTC</createdTime>
+<generatorID>AED1C410-FC61-D801-3E98-47AD05DB3182</generatorID>
+<ownerDesignName>lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="D2280978-4D98-4F03-2027-0590C7C8761B">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:53 UTC</createdTime>
+<generatorID>F5B42E9A-24D9-EF26-CA77-9415DEFBE8CE</generatorID>
+<ownerDesignName>lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>48 CHAR</dataTypeSize>
+<ownDataTypeParameters>48 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="original_name" id="76444AF6-F5F8-2211-3D3A-B2D437281211">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:53 UTC</createdTime>
+<generatorID>5DE2F121-7510-0F3D-8790-51F8B8039065</generatorID>
+<ownerDesignName>lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>48 CHAR</dataTypeSize>
+<ownDataTypeParameters>48 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="release_date" id="FFF47D2F-F417-DD44-D7F2-40CC35C0A25B">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:53 UTC</createdTime>
+<generatorID>6D2FB23A-15FC-1D40-311D-36B78D26318E</generatorID>
+<ownerDesignName>lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="country" id="1B089AB8-CAF2-1282-1DCD-BD28D8FB7527">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:53 UTC</createdTime>
+<generatorID>27745177-98A8-C7B9-7FB2-9FEA24EDDAFC</generatorID>
+<ownerDesignName>lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="genre_level" id="FCDBBD71-D460-277B-FF03-3CC30F7C029E">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:53 UTC</createdTime>
+<generatorID>AA24BD20-EA46-CE9E-0894-9C99AB345029</generatorID>
+<ownerDesignName>lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT042</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="producer_id" id="38C7382A-5E38-974E-20F5-2A0A13DC960F">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:53 UTC</createdTime>
+<generatorID>B581CDD5-883B-813E-D1B6-1944136CE1BE</generatorID>
+<ownerDesignName>lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AFC11DA7-88DE-9771-17FA-410377DF9392" referredColumn="62E72DF2-7F31-96E2-71FC-C9DAB339E792"/>
+</associations>
+</Column>
+<Column name="storage_id" id="98AD62DC-C1B2-2C96-586B-CD58053392DC">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:53 UTC</createdTime>
+<generatorID>3D58D542-DE4E-8CF7-BC62-6952CE09BE5D</generatorID>
+<ownerDesignName>lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BE27B65E-1AE1-1728-1834-83C13397FBD4" referredColumn="D5D9F6C4-5925-F044-A695-7448697C8690"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B995FD3A-B387-0AF7-09B1-6FEE186A3A13" name="movie_PK">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:53 UTC</createdTime>
+<generatorID>2D16CDDF-2A84-8CDA-99BE-C4C0FD414DC7</generatorID>
+<ownerDesignName>lab_1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8255F05F-32E4-01DF-4FA7-54E115C60BB7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="252C04A8-3999-12A6-C1F4-BEF7A80FCEBB" name="movie_producer_FK">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:54 UTC</createdTime>
+<generatorID>72D67C2A-0AEE-3AE4-4B8B-AD3FE7D9219C</generatorID>
+<ownerDesignName>lab_1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="38C7382A-5E38-974E-20F5-2A0A13DC960F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7DFA1F69-4EFF-5787-38D1-A916A299BB95" name="movie_storage_FK">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:54 UTC</createdTime>
+<generatorID>A19A25E6-83E9-ADD7-67D7-51FB2865F3BB</generatorID>
+<ownerDesignName>lab_1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="98AD62DC-C1B2-2C96-586B-CD58053392DC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D6D1E59C-8A89-A9DF-7B87-0BBA8A82BC7B" name="movie_actor">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:53 UTC</createdTime>
+<ownerDesignName>lab_1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="movie_id" id="11F78403-1BC3-922D-425D-95EB7435E6EF">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:54 UTC</createdTime>
+<ownerDesignName>lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="11B61E8C-1167-E91A-FB90-994BCE7C94B9" referredColumn="8255F05F-32E4-01DF-4FA7-54E115C60BB7"/>
+</associations>
+</Column>
+<Column name="actor_id" id="66A6DFD6-9F8B-02B2-8AFD-5768BE6F2643">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:54 UTC</createdTime>
+<ownerDesignName>lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DAD20D1B-52B7-958F-C8C6-C66D585CB39C" referredColumn="4D9FFCA4-48E1-DEB4-ECD7-02078BBB023E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="65C388D4-ADCB-0144-0A00-4425D0CDD9CF" name="movie_actor_PK">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:53 UTC</createdTime>
+<ownerDesignName>lab_1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="11F78403-1BC3-922D-425D-95EB7435E6EF"/>
+<colUsage columnID="66A6DFD6-9F8B-02B2-8AFD-5768BE6F2643"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="91711A90-D94C-CDE7-A6BE-5E498DAEED90" name="movie_actor_movie_FK">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:53 UTC</createdTime>
+<generatorID>5654D7BD-DD4C-EE8E-CBA0-0317AD5B7962</generatorID>
+<ownerDesignName>lab_1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="11F78403-1BC3-922D-425D-95EB7435E6EF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3787DADA-D517-A116-4E63-4698B609692B" name="movie_actor_actor_FK">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:54 UTC</createdTime>
+<generatorID>5654D7BD-DD4C-EE8E-CBA0-0317AD5B7962</generatorID>
+<ownerDesignName>lab_1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="66A6DFD6-9F8B-02B2-8AFD-5768BE6F2643"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
