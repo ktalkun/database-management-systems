@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="34D00A73-422B-AB9C-278B-F6FFFF1A38AC" name="storage">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:53 UTC</createdTime>
+<generatorID>5CB65A53-EC61-B395-1B7B-41D02079892D</generatorID>
+<ownerDesignName>lab_1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="D5D9F6C4-5925-F044-A695-7448697C8690">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:53 UTC</createdTime>
+<generatorID>5BC6A06E-140A-5E05-7178-124DD51434FA</generatorID>
+<ownerDesignName>lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="storage_name" id="9FBFAFEB-3D2C-5060-09AD-A3E0BC84A810">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:53 UTC</createdTime>
+<generatorID>3BD38FBD-C1C6-C971-EC84-9722EC4972A5</generatorID>
+<ownerDesignName>lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>48 CHAR</dataTypeSize>
+<ownDataTypeParameters>48 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="size" id="85F80CCD-65A7-054E-8522-B976244803FB">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:53 UTC</createdTime>
+<generatorID>66C10657-C24B-F330-F173-BDAEA2A00974</generatorID>
+<ownerDesignName>lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3973C9DC-D261-D6CC-6879-FDA486C970ED" name="storage_PK">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 19:05:53 UTC</createdTime>
+<generatorID>78147E31-D57C-262F-19CA-07C4166CC64E</generatorID>
+<ownerDesignName>lab_1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D5D9F6C4-5925-F044-A695-7448697C8690"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
