@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="AAD85144-E0B6-0C89-49A5-8CBB0D3EB3D4" containerWithKeyObject="E9B302FA-D57C-ACC9-47B3-3D7AF86AE6D7" localFKIndex="AB4F61A8-225A-0E4A-ACA5-1B67F8DAC233" name="movie_actor_actor_FK">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 16:03:35 UTC</createdTime>
+<generatorID>5654D7BD-DD4C-EE8E-CBA0-0317AD5B7962</generatorID>
+<ownerDesignName>dl_settings</ownerDesignName>
+<referredTableLongName>actor</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>5766F1F7-818E-6ED0-AC83-0BD469AB5ACF</referredTableID>
+<keyObject>675A0BF5-92F6-B0D4-1685-DBD59AB4090D</keyObject>
+<referredKeyID>675A0BF5-92F6-B0D4-1685-DBD59AB4090D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

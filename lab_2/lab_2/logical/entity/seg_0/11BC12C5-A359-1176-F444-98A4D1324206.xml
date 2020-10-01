@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="11BC12C5-A359-1176-F444-98A4D1324206" name="producer">
+<createdBy>kirill</createdBy>
+<createdTime>2020-09-22 17:11:13 UTC</createdTime>
+<ownerDesignName>lab_2</ownerDesignName>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="05B4E701-D7BA-22DC-B77F-0BC68D7254FC">
+<createdBy>kirill</createdBy>
+<createdTime>2020-09-22 17:11:39 UTC</createdTime>
+<ownerDesignName>lab_2</ownerDesignName>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="96234B31-2349-F388-FA06-0C3313329FF7">
+<createdBy>kirill</createdBy>
+<createdTime>2020-09-22 17:11:55 UTC</createdTime>
+<ownerDesignName>lab_2</ownerDesignName>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="original_name" id="03D18B09-C576-2124-A9F8-C6DE22C6C3D4">
+<createdBy>kirill</createdBy>
+<createdTime>2020-09-22 17:12:10 UTC</createdTime>
+<ownerDesignName>lab_2</ownerDesignName>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5FA9FB51-729B-8153-3CD8-48EB55EC8C83" name="producer PK">
+<createdBy>kirill</createdBy>
+<createdTime>2020-09-22 17:11:53 UTC</createdTime>
+<ownerDesignName>lab_2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>05B4E701-D7BA-22DC-B77F-0BC68D7254FC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

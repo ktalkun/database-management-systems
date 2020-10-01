@@ -1,0 +1,144 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C05FE36A-75B3-A845-9934-7A5732E8BA9A" name="movie">
+<createdBy>kirill</createdBy>
+<createdTime>2020-09-22 16:03:57 UTC</createdTime>
+<ownerDesignName>dl_settings</ownerDesignName>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="AED1C410-FC61-D801-3E98-47AD05DB3182">
+<createdBy>kirill</createdBy>
+<createdTime>2020-09-22 16:21:17 UTC</createdTime>
+<ownerDesignName>dl_settings</ownerDesignName>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="F5B42E9A-24D9-EF26-CA77-9415DEFBE8CE">
+<createdBy>kirill</createdBy>
+<createdTime>2020-09-22 16:06:55 UTC</createdTime>
+<ownerDesignName>dl_settings</ownerDesignName>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>48 CHAR</dataTypeSize>
+<ownDataTypeParameters>48 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="original_name" id="5DE2F121-7510-0F3D-8790-51F8B8039065">
+<createdBy>kirill</createdBy>
+<createdTime>2020-09-22 16:09:24 UTC</createdTime>
+<ownerDesignName>dl_settings</ownerDesignName>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>48 CHAR</dataTypeSize>
+<ownDataTypeParameters>48 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="release_date" id="6D2FB23A-15FC-1D40-311D-36B78D26318E">
+<createdBy>kirill</createdBy>
+<createdTime>2020-09-22 16:11:09 UTC</createdTime>
+<ownerDesignName>dl_settings</ownerDesignName>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
+</engineerTo>
+<constraintName>CONSTRAINT_RELEASE_FROM</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1883</beginValue>
+<description>release from constraint</description>
+</rangeDef>
+</listOfRanges>
+</Attribute>
+<Attribute name="country" id="27745177-98A8-C7B9-7FB2-9FEA24EDDAFC">
+<createdBy>kirill</createdBy>
+<createdTime>2020-09-22 16:16:11 UTC</createdTime>
+<ownerDesignName>dl_settings</ownerDesignName>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="genre_level" id="AA24BD20-EA46-CE9E-0894-9C99AB345029">
+<createdBy>kirill</createdBy>
+<createdTime>2020-09-22 16:52:24 UTC</createdTime>
+<ownerDesignName>dl_settings</ownerDesignName>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT042</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="producer_iid" id="B581CDD5-883B-813E-D1B6-1944136CE1BE">
+<createdBy>kirill</createdBy>
+<createdTime>2020-09-22 17:52:51 UTC</createdTime>
+<generatorID>72D67C2A-0AEE-3AE4-4B8B-AD3FE7D9219C</generatorID>
+<ownerDesignName>dl_settings</ownerDesignName>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
+</engineerTo>
+<referedAttribute>05B4E701-D7BA-22DC-B77F-0BC68D7254FC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="storage_id" id="3D58D542-DE4E-8CF7-BC62-6952CE09BE5D">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 13:46:29 UTC</createdTime>
+<generatorID>A19A25E6-83E9-ADD7-67D7-51FB2865F3BB</generatorID>
+<ownerDesignName>dl_settings</ownerDesignName>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
+</engineerTo>
+<referedAttribute>5BC6A06E-140A-5E05-7178-124DD51434FA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2D16CDDF-2A84-8CDA-99BE-C4C0FD414DC7" name="movie PK">
+<createdBy>kirill</createdBy>
+<createdTime>2020-09-22 17:10:11 UTC</createdTime>
+<ownerDesignName>dl_settings</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>AED1C410-FC61-D801-3E98-47AD05DB3182</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5CB65A53-EC61-B395-1B7B-41D02079892D" name="storage">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 13:44:56 UTC</createdTime>
+<ownerDesignName>lab_2</ownerDesignName>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="5BC6A06E-140A-5E05-7178-124DD51434FA">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 13:45:04 UTC</createdTime>
+<ownerDesignName>lab_2</ownerDesignName>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="storage_name" id="3BD38FBD-C1C6-C971-EC84-9722EC4972A5">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 13:45:14 UTC</createdTime>
+<ownerDesignName>lab_2</ownerDesignName>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>48</dataTypeSize>
+<ownDataTypeParameters>48,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="size" id="66C10657-C24B-F330-F173-BDAEA2A00974">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 13:45:27 UTC</createdTime>
+<ownerDesignName>lab_2</ownerDesignName>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
+</engineerTo>
+<constraintName>CONSTRAINT_SIZE</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<defaultValue>4608</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>512000</endValue>
+<description>size constraint</description>
+</rangeDef>
+</listOfRanges>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="78147E31-D57C-262F-19CA-07C4166CC64E" name="storage PK">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-01 13:45:12 UTC</createdTime>
+<ownerDesignName>lab_2</ownerDesignName>
+<engineerTo>
+<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5BC6A06E-140A-5E05-7178-124DD51434FA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
