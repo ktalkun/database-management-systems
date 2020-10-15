@@ -85,18 +85,6 @@
 <dataTypeSize>20</dataTypeSize>
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="genre_level" id="AA24BD20-EA46-CE9E-0894-9C99AB345029">
-<createdBy>kirill</createdBy>
-<createdTime>2020-09-22 16:52:24 UTC</createdTime>
-<ownerDesignName>lab_2</ownerDesignName>
-<engineerTo>
-<item key="3C1A8E38-3BF9-EC71-579F-8D3E6BF0C7DF" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT042</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="producer_iid" id="B581CDD5-883B-813E-D1B6-1944136CE1BE">
 <createdBy>kirill</createdBy>
 <createdTime>2020-09-22 17:52:51 UTC</createdTime>

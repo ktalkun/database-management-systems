@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="92FC4506-BCA5-3FA0-69E6-DF2D4E1FFD61" name="storage">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<generatorID>5CB65A53-EC61-B395-1B7B-41D02079892D</generatorID>
+<ownerDesignName>lab_2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="2EA41CF3-2234-37CA-EAB3-A335A99E78A8">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<generatorID>5BC6A06E-140A-5E05-7178-124DD51434FA</generatorID>
+<ownerDesignName>lab_2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="storage_name" id="F703B6DD-1B51-6653-AAA3-15C15453D3F7">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<generatorID>3BD38FBD-C1C6-C971-EC84-9722EC4972A5</generatorID>
+<ownerDesignName>lab_2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>48</dataTypeSize>
+<ownDataTypeParameters>48,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="type_id" id="B5B4981D-BD0D-9D0A-A4C9-EA569A808009">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<generatorID>4E39B07D-CB6E-9CD2-BEF9-008E60C434AD</generatorID>
+<ownerDesignName>lab_2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="302D1895-A7EC-AE6D-1DE2-D9A560292E60" referredColumn="220716FB-D874-CB77-A256-0B1B6E360AC4"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="34B2D6AA-F902-2378-4E73-60DC44BE645E" name="storage_PK">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<generatorID>78147E31-D57C-262F-19CA-07C4166CC64E</generatorID>
+<ownerDesignName>lab_2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2EA41CF3-2234-37CA-EAB3-A335A99E78A8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="74AF7758-D7AC-01CC-EA76-DC42486F84F2" name="storage_type_storage">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<generatorID>EEA54E6F-F552-5129-B27F-F35B6CC0B83A</generatorID>
+<ownerDesignName>lab_2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B5B4981D-BD0D-9D0A-A4C9-EA569A808009"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

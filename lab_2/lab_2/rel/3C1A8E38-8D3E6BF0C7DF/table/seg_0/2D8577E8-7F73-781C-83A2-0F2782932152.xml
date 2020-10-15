@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2D8577E8-7F73-781C-83A2-0F2782932152" name="movie_genre">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<ownerDesignName>lab_2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="movie_id" id="CFAC2365-84EA-EAAE-1B60-7C5E07525867">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<ownerDesignName>lab_2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4849D8F1-F889-2CF1-CA23-6CCF0C083880" referredColumn="6C29A3D2-8092-3BA2-F9BE-8DB2718475F3"/>
+</associations>
+</Column>
+<Column name="genre_id" id="13C579F9-53E7-F63A-A5CC-5D0DFE0AA0DB">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<ownerDesignName>lab_2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5131346A-DF7D-CC03-7595-ADAF9439D29D" referredColumn="E4605A64-0CE8-24F2-58D2-7299357E23B5"/>
+</associations>
+</Column>
+<Column name="genre_level" id="B4805D34-3463-0308-2301-733D9CBF9BC7">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-15 16:46:07 UTC</createdTime>
+<ownerDesignName>lab_2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT042</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0572678E-8938-1FB7-37AC-48D63E73BC5C" name="movie_genre_PK">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<ownerDesignName>lab_2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CFAC2365-84EA-EAAE-1B60-7C5E07525867"/>
+<colUsage columnID="13C579F9-53E7-F63A-A5CC-5D0DFE0AA0DB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="81845E10-C282-D857-8C0F-9043F9B9F270" name="movie_genre_movie_FK">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<generatorID>EE146AA2-65BF-6BC1-66BE-D9F70DB389B5</generatorID>
+<ownerDesignName>lab_2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CFAC2365-84EA-EAAE-1B60-7C5E07525867"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="96763E58-7769-69A6-81DD-940C6A1AFB83" name="movie_genre_genre_FK">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<generatorID>EE146AA2-65BF-6BC1-66BE-D9F70DB389B5</generatorID>
+<ownerDesignName>lab_2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="13C579F9-53E7-F63A-A5CC-5D0DFE0AA0DB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
