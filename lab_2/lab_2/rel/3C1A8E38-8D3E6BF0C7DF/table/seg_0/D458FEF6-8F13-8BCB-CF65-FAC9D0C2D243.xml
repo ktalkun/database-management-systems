@@ -1,15 +1,15 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4D077AA1-8DC6-BA16-D264-7B74A25473C3" name="movie_actor">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D458FEF6-8F13-8BCB-CF65-FAC9D0C2D243" name="movie_actor">
 <createdBy>kirill</createdBy>
-<createdTime>2020-10-01 14:53:24 UTC</createdTime>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
 <ownerDesignName>lab_2</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="movie_id" id="6953E314-52E5-5C90-E869-2E49AE0B5E68">
+<Column name="movie_id" id="BF9DCCEC-5F21-F82E-F123-9A17B52797D2">
 <createdBy>kirill</createdBy>
-<createdTime>2020-10-01 14:53:24 UTC</createdTime>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
 <ownerDesignName>lab_2</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -18,12 +18,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="84E6F7F4-FBCC-0CC1-C09B-86E0A46DB0AC" referredColumn="516F4FB6-7D56-C3A6-E6FA-A1EF60FDF61A"/>
+<colAssociation fkAssociation="4E479C26-4145-0208-AC0D-0329D8AD88B1" referredColumn="6C29A3D2-8092-3BA2-F9BE-8DB2718475F3"/>
 </associations>
 </Column>
-<Column name="actor_id" id="771E9BC3-F12E-EAF0-112D-39752905674B">
+<Column name="actor_id" id="D4D5E1C6-9DA2-45AB-FD3E-91D0EFCB1211">
 <createdBy>kirill</createdBy>
-<createdTime>2020-10-01 14:53:24 UTC</createdTime>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
 <ownerDesignName>lab_2</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -32,43 +32,43 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="BA321585-3224-25CD-DF95-292AC2E9EBBD" referredColumn="8F942A1F-55E0-C81E-691C-CDF51138974D"/>
+<colAssociation fkAssociation="D6A49B74-4ED4-40A3-0D98-6ADE8D81ADCB" referredColumn="C35A780F-A716-3EAA-AFF1-1FCDB9F8EAFD"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="C21A216B-06DD-70A1-F6E8-5934BE7FF573" name="movie_actor_PK">
+<ind_PK_UK id="12B78D55-48ED-3EF3-D803-FC01393C7CCA" name="movie_actor_PK">
 <createdBy>kirill</createdBy>
-<createdTime>2020-10-01 14:53:24 UTC</createdTime>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
 <ownerDesignName>lab_2</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="6953E314-52E5-5C90-E869-2E49AE0B5E68"/>
-<colUsage columnID="771E9BC3-F12E-EAF0-112D-39752905674B"/>
+<colUsage columnID="BF9DCCEC-5F21-F82E-F123-9A17B52797D2"/>
+<colUsage columnID="D4D5E1C6-9DA2-45AB-FD3E-91D0EFCB1211"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="AE9D4747-FA9D-6C21-82DD-70AA164A3290" name="movie_actor_movie_FK">
+<ind_PK_UK id="EA845420-1079-BAE3-E89E-1B1FC0E530AF" name="movie_actor_movie_FK">
 <createdBy>kirill</createdBy>
-<createdTime>2020-10-01 14:53:24 UTC</createdTime>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
 <generatorID>5654D7BD-DD4C-EE8E-CBA0-0317AD5B7962</generatorID>
 <ownerDesignName>lab_2</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="6953E314-52E5-5C90-E869-2E49AE0B5E68"/>
+<colUsage columnID="BF9DCCEC-5F21-F82E-F123-9A17B52797D2"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="12F62462-D470-CC49-36A8-366261A80978" name="movie_actor_actor_FK">
+<ind_PK_UK id="DF32C90E-ADC8-25DA-101B-26D1A8180480" name="movie_actor_actor_FK">
 <createdBy>kirill</createdBy>
-<createdTime>2020-10-01 14:53:24 UTC</createdTime>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
 <generatorID>5654D7BD-DD4C-EE8E-CBA0-0317AD5B7962</generatorID>
 <ownerDesignName>lab_2</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="771E9BC3-F12E-EAF0-112D-39752905674B"/>
+<colUsage columnID="D4D5E1C6-9DA2-45AB-FD3E-91D0EFCB1211"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

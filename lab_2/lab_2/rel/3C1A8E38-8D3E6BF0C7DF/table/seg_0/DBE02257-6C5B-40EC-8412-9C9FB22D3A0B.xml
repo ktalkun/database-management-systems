@@ -1,17 +1,17 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="126F6494-D8D3-68ED-150E-31C2AAE4FC58" name="actor">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DBE02257-6C5B-40EC-8412-9C9FB22D3A0B" name="producer">
 <createdBy>kirill</createdBy>
-<createdTime>2020-10-01 14:53:24 UTC</createdTime>
-<generatorID>85A44F94-689E-D80A-499C-4089DC1E3563</generatorID>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<generatorID>11BC12C5-A359-1176-F444-98A4D1324206</generatorID>
 <ownerDesignName>lab_2</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="id" id="8F942A1F-55E0-C81E-691C-CDF51138974D">
+<Column name="id" id="1F7A6CD7-BB03-8331-EE03-09A4DC0B1A9E">
 <createdBy>kirill</createdBy>
-<createdTime>2020-10-01 14:53:24 UTC</createdTime>
-<generatorID>2E53B154-7884-BDAD-316F-6D88C09F0A4E</generatorID>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<generatorID>05B4E701-D7BA-22DC-B77F-0BC68D7254FC</generatorID>
 <ownerDesignName>lab_2</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -19,10 +19,10 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="name" id="6D975E1E-8EE1-A0C9-CAC6-FD21395AFDF1">
+<Column name="name" id="18E3C318-A218-8A69-E5A7-138ADC105293">
 <createdBy>kirill</createdBy>
-<createdTime>2020-10-01 14:53:24 UTC</createdTime>
-<generatorID>8C6902FC-A5AA-17D5-ADC7-1AC6E6C2A36F</generatorID>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<generatorID>96234B31-2349-F388-FA06-0C3313329FF7</generatorID>
 <ownerDesignName>lab_2</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -32,10 +32,10 @@
 <ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="original_name" id="0E52BB81-B110-DA12-B368-926A3E903713">
+<Column name="original_name" id="42A129CA-C738-A2BC-3B96-5628F6209ABD">
 <createdBy>kirill</createdBy>
-<createdTime>2020-10-01 14:53:24 UTC</createdTime>
-<generatorID>A31C7C08-7B5A-8B3E-32F3-17D60BFDD05A</generatorID>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<generatorID>03D18B09-C576-2124-A9F8-C6DE22C6C3D4</generatorID>
 <ownerDesignName>lab_2</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -47,16 +47,16 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="D448108F-7F38-A8C5-B1F6-881872C2A8B7" name="actor_PK">
+<ind_PK_UK id="E3ABD8B1-AB82-F41D-450D-9DFA8867DF40" name="producer_PK">
 <createdBy>kirill</createdBy>
-<createdTime>2020-10-01 14:53:24 UTC</createdTime>
-<generatorID>EF230E62-E391-AD7B-9833-C77C5D3AC492</generatorID>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<generatorID>5FA9FB51-729B-8153-3CD8-48EB55EC8C83</generatorID>
 <ownerDesignName>lab_2</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="8F942A1F-55E0-C81E-691C-CDF51138974D"/>
+<colUsage columnID="1F7A6CD7-BB03-8331-EE03-09A4DC0B1A9E"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

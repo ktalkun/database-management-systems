@@ -1,17 +1,17 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1EA47C4E-4BE0-8739-2288-7E6F54C06E36" name="storage">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4AF2B03B-046D-A881-2EED-7B8EA55DD4B9" name="storage_type">
 <createdBy>kirill</createdBy>
-<createdTime>2020-10-01 14:53:24 UTC</createdTime>
-<generatorID>5CB65A53-EC61-B395-1B7B-41D02079892D</generatorID>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<generatorID>50C13EF8-784A-C190-A22E-9C352AA56EA4</generatorID>
 <ownerDesignName>lab_2</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="id" id="6923B912-AC79-2DD1-A34C-908CFC6D1D49">
+<Column name="id" id="220716FB-D874-CB77-A256-0B1B6E360AC4">
 <createdBy>kirill</createdBy>
-<createdTime>2020-10-01 14:53:24 UTC</createdTime>
-<generatorID>5BC6A06E-140A-5E05-7178-124DD51434FA</generatorID>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<generatorID>74BF5032-1B22-81D0-4E52-8B8F0A922718</generatorID>
 <ownerDesignName>lab_2</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -19,24 +19,13 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="storage_name" id="17456F27-CF9E-2DF9-6680-D4507822763B">
+<Column name="size" id="076D1F00-5287-0A56-78E8-60EAA0F005B6">
 <createdBy>kirill</createdBy>
-<createdTime>2020-10-01 14:53:24 UTC</createdTime>
-<generatorID>3BD38FBD-C1C6-C971-EC84-9722EC4972A5</generatorID>
-<ownerDesignName>lab_2</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>48</dataTypeSize>
-<ownDataTypeParameters>48,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="size" id="2A070FB7-4116-A3CE-2AB6-224439FB8BCA">
-<createdBy>kirill</createdBy>
-<createdTime>2020-10-01 14:53:24 UTC</createdTime>
-<generatorID>66C10657-C24B-F330-F173-BDAEA2A00974</generatorID>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<generatorID>A71572AC-A550-EBA0-AF77-E07E6EFC2F32</generatorID>
 <ownerDesignName>lab_2</ownerDesignName>
 <constraintName>CONSTRAINT_SIZE</constraintName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -51,18 +40,30 @@
 </rangeDef>
 </listOfRanges>
 </Column>
+<Column name="type" id="C2E7EC54-6F89-68A7-4792-35AFFC0F40BB">
+<createdBy>kirill</createdBy>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<generatorID>1C41E2F3-18B7-9F8E-0074-A8718B346221</generatorID>
+<ownerDesignName>lab_2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="5EA71F02-C0E7-70C3-E7D9-9C448435BD66" name="storage_PK">
+<ind_PK_UK id="FE14028D-F507-A13E-3F8C-BA209B5AA25E" name="storage_type_PK">
 <createdBy>kirill</createdBy>
-<createdTime>2020-10-01 14:53:24 UTC</createdTime>
-<generatorID>78147E31-D57C-262F-19CA-07C4166CC64E</generatorID>
+<createdTime>2020-10-15 16:45:15 UTC</createdTime>
+<generatorID>2FF93D24-AE6E-A17D-73DC-1EB474211B51</generatorID>
 <ownerDesignName>lab_2</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="6923B912-AC79-2DD1-A34C-908CFC6D1D49"/>
+<colUsage columnID="220716FB-D874-CB77-A256-0B1B6E360AC4"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
