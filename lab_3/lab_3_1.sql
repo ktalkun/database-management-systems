@@ -15,3 +15,9 @@ WHERE DEPTADDR = 'CHICAGO'
 SELECT MIN(SALVALUE)
 FROM SALARY
 WHERE YEAR = 2009;
+
+-- 4. Выдать информацию обо всех работниках, родившихся не позднее 1 января
+-- 1960 года (ФУНКЦИИ).
+SELECT *
+FROM EMP
+WHERE BIRTHDATE <= TO_DATE('01-01-1960', 'DD-MM-YY');
