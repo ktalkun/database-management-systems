@@ -55,3 +55,8 @@ FROM EMP;
 -- Тоже, но год числом.
 SELECT EMPNAME, TO_CHAR(BIRTHDATE, 'DD, MONTH, YYYY') AS BIRTHDATE, MANAGER_ID
 FROM EMP;
+
+-- 8.	Выдать информацию о должностях, изменив названия должности “CLERK” и
+-- “DRIVER” на “WORKER” (ФУНКЦИИ).
+SELECT JOBNO, REGEXP_REPLACE(JOBNAME, 'CLERK|DRIVER', 'WORKER'), MINSALARY
+FROM JOB;
