@@ -34,3 +34,16 @@ SELECT COUNT(*) AS NUMBER_OF_EMP
 FROM EMP
 WHERE BIRTHDATE IS NOT NULL
   AND MANAGER_ID IS NOT NULL;
+
+-- 6. Найти работников, чьё имя состоит из одного слова. Имена выдать на нижнем
+-- регистре, с удалением стоящей справа буквы t (ФУНКЦИИ).
+
+-- С удалением одной стоящей справа буквы t.
+SELECT REGEXP_REPLACE(LOWER(EMPNAME), 't$') AS EMPNAME, BIRTHDATE
+FROM EMP
+WHERE REGEXP_COUNT(EMPNAME, '[^ ]+') = 1;
+
+-- C удалением всех стоящих справа буквы t.
+SELECT RTRIM(LOWER(EMPNAME), 't') AS EMPNAME, BIRTHDATE
+FROM EMP
+WHERE REGEXP_COUNT(EMPNAME, '[^ ]+') = 1;
