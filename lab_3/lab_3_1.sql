@@ -106,3 +106,12 @@ SELECT JOBNO, EMPNAME, DEPTNO, STARTDATE, ENDDATE
 FROM CAREER
          JOIN EMP ON CAREER.EMPNO = EMP.EMPNO
 ORDER BY EMPNAME;
+
+-- 15. Выдайте сведения о карьере сотрудников с указанием их имён, наименования
+-- должности, и названия отдела (ОБЪЕДИНЕНИЕ ТРЁХ И БОЛЬШЕГО ЧИСЛА ТАБЛИЦ).
+SELECT EMPNAME, JOBNAME, DEPTNAME
+FROM CAREER
+         LEFT JOIN EMP ON CAREER.EMPNO = EMP.EMPNO
+         LEFT JOIN JOB ON CAREER.JOBNO = JOB.JOBNO
+         LEFT JOIN DEPT ON CAREER.DEPTNO = DEPT.DEPTNO
+ORDER BY EMPNAME;
