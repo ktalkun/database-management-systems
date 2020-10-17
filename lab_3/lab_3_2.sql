@@ -22,3 +22,33 @@ FROM EMP
                               WHERE EMPNAME = 'RICHARD MARTIN') DEPTNUMS
                              ON CAREER.DEPTNO = DEPTNUMS.DEPTNO) EMPNUMS
               ON EMP.EMPNO = EMPNUMS.EMPNO;
+
+-- 3. Найти имена сотрудников, работавших или работающих в тех же отделах и
+-- должностях, что и сотрудник 'RICHARD MARTIN' (СРАВНЕНИЕ БОЛЕЕ ЧЕМ ПО ОДНОМУ
+-- ЗНАЧЕНИЮ).
+
+-- Работавших в тех же отделах или в тех же должностях.
+SELECT EMPNAME
+FROM EMP
+         JOIN (SELECT DISTINCT CAREER.EMPNO
+               FROM CAREER
+                        JOIN (SELECT DEPTNO, JOBNO
+                              FROM CAREER
+                                       JOIN EMP ON CAREER.EMPNO = EMP.EMPNO
+                              WHERE EMPNAME = 'RICHARD MARTIN') DEPT_JOB_NUMS
+                             ON CAREER.DEPTNO = DEPT_JOB_NUMS.DEPTNO OR
+                                CAREER.JOBNO = DEPT_JOB_NUMS.JOBNO) EMPNUMS
+              ON EMP.EMPNO = EMPNUMS.EMPNO;
+
+-- Работавших в тех же отделах и в тех же должностях.
+SELECT EMPNAME
+FROM EMP
+         JOIN (SELECT DISTINCT CAREER.EMPNO
+               FROM CAREER
+                        JOIN (SELECT DEPTNO, JOBNO
+                              FROM CAREER
+                                       JOIN EMP ON CAREER.EMPNO = EMP.EMPNO
+                              WHERE EMPNAME = 'RICHARD MARTIN') DEPT_JOB_NUMS
+                             ON CAREER.DEPTNO = DEPT_JOB_NUMS.DEPTNO AND
+                                CAREER.JOBNO = DEPT_JOB_NUMS.JOBNO) EMPNUMS
+              ON EMP.EMPNO = EMPNUMS.EMPNO;
