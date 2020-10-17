@@ -142,3 +142,10 @@ WHERE NOT EXISTS(SELECT *
                  FROM SALARY
                  WHERE SALARY.EMPNO = CAREER.EMPNO)
   AND DEPTNO IS NOT NULL;
+
+-- 10. Вывести сведения о карьере сотрудников с указанием названий и адресов
+-- отделов вместо номеров отделов (СОСТАВНЫЕ ЗАПРОСЫ).
+SELECT JOBNO, EMPNO, DEPTNAME, DEPTADDR, STARTDATE, ENDDATE
+FROM CAREER
+         JOIN DEPT ON CAREER.DEPTNO = DEPT.DEPTNO
+ORDER BY EMPNO, JOBNO, DEPTNAME;
