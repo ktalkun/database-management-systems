@@ -21,3 +21,16 @@ WHERE YEAR = 2009;
 SELECT *
 FROM EMP
 WHERE BIRTHDATE <= TO_DATE('01-01-1960', 'DD-MM-YY');
+
+-- 5. Подсчитать число работников, сведения о которых имеются в базе данных
+-- (ФУНКЦИИ).
+
+-- Кол-во сотрудников, о которых есть какие-либо сведения.
+SELECT COUNT(*) AS NUMBER_OF_EMP
+FROM EMP;
+
+-- Кол-во сотрудников, о которых есть какие-либо все сведения.
+SELECT COUNT(*) AS NUMBER_OF_EMP
+FROM EMP
+WHERE BIRTHDATE IS NOT NULL
+  AND MANAGER_ID IS NOT NULL;
