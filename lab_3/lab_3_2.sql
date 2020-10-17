@@ -64,3 +64,13 @@ WHERE SALVALUE > ANY
        FROM SALARY
        WHERE YEAR IN (2007, 2008)
        GROUP BY YEAR);
+
+-- 5. Найти сведения о номерах сотрудников, получивших зарплату за какой-либо
+-- месяц большую, чем средние зарплаты за все годы начислений (ОПЕРАТОРЫ ANY/ALL).
+SELECT DISTINCT EMP.EMPNO
+FROM EMP
+         JOIN SALARY ON EMP.EMPNO = SALARY.EMPNO
+WHERE SALVALUE > ANY
+      (SELECT AVG(SALVALUE)
+       FROM SALARY
+       GROUP BY YEAR);
