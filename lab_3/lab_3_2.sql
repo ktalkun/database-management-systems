@@ -52,3 +52,15 @@ FROM EMP
                              ON CAREER.DEPTNO = DEPT_JOB_NUMS.DEPTNO AND
                                 CAREER.JOBNO = DEPT_JOB_NUMS.JOBNO) EMPNUMS
               ON EMP.EMPNO = EMPNUMS.EMPNO;
+
+-- 4. Найти сведения о номерах сотрудников, получивших за какой-либо месяц
+-- зарплату большую, чем средняя зарплата за 2007 г. или большую чем средняя
+-- зарплата за 2008г (ОПЕРАТОРЫ ANY/ALL).
+SELECT DISTINCT EMP.EMPNO
+FROM EMP
+         JOIN SALARY ON EMP.EMPNO = SALARY.EMPNO
+WHERE SALVALUE > ANY
+      (SELECT AVG(SALVALUE)
+       FROM SALARY
+       WHERE YEAR IN (2007, 2008)
+       GROUP BY YEAR);
