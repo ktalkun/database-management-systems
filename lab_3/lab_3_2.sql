@@ -74,3 +74,10 @@ WHERE SALVALUE > ANY
       (SELECT AVG(SALVALUE)
        FROM SALARY
        GROUP BY YEAR);
+
+-- 6. Определить годы, в которые начисленная средняя зарплата была больше
+-- средней зарплаты за все годы начислений (HAVING С ВЛОЖЕННЫМИ ПОДЗАПРОСАМИ).
+SELECT YEAR
+FROM SALARY
+GROUP BY YEAR
+HAVING AVG(SALVALUE) > (SELECT AVG(SALVALUE) FROM SALARY);
