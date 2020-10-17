@@ -156,3 +156,44 @@ SELECT YEAR, CAST(AVG(SALVALUE) AS INT) AS AVG_SALARY
 FROM SALARY
 GROUP BY YEAR
 ORDER BY YEAR;
+
+-- 12. Разделите сотрудников на возрастные группы:
+-- A) возраст 20-30 лет;
+-- B) 31-40 лет;
+-- C) 41-50;
+-- D) 51-60 или возраст не определён (ОПЕРАТОР CASE).
+
+-- Сотрудники по группам A) - C). Сотрудники младше 20 лет или старше 60
+-- не выводятся.
+SELECT EMPNO,
+       EMPNAME,
+       CASE
+           WHEN AGE BETWEEN 20 AND 30 THEN 'A) 20-30 лет'
+           WHEN AGE BETWEEN 31 AND 40 THEN 'B) 31-40 лет'
+           WHEN AGE BETWEEN 41 AND 50 THEN 'C) 41-50 лет'
+           WHEN AGE BETWEEN 51 AND 60 OR AGE IS NULL THEN 'D) 51-60 лет'
+           END AS GROUPS
+FROM (SELECT EMPNO,
+             EMPNAME,
+             TRUNC(MONTHS_BETWEEN(SYSDATE, BIRTHDATE) / 12) AS AGE
+      FROM EMP)
+WHERE AGE BETWEEN 20 AND 60
+   OR AGE IS NULL
+ORDER BY GROUPS;
+
+-- Сотрудники по группам A) - E). Группа A) <= 30 лет и группа E > 60 лет или
+-- не задано).
+SELECT EMPNO,
+       EMPNAME,
+       CASE
+           WHEN AGE < 30 THEN 'A) <= 30 лет'
+           WHEN AGE BETWEEN 31 AND 40 THEN 'B) 31-40 лет'
+           WHEN AGE BETWEEN 41 AND 50 THEN 'C) 41-50 лет'
+           WHEN AGE BETWEEN 51 AND 60 THEN 'D) 51-60 лет'
+           WHEN AGE > 60 OR AGE IS NULL THEN 'E) > 60 лет или не задано'
+           END AS GROUPS
+FROM (SELECT EMPNO,
+             EMPNAME,
+             TRUNC(MONTHS_BETWEEN(SYSDATE, BIRTHDATE) / 12) AS AGE
+      FROM EMP)
+ORDER BY GROUPS;
