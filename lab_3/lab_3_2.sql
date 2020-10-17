@@ -123,3 +123,22 @@ WHERE EXISTS(SELECT *
              FROM SALARY
              WHERE SALARY.EMPNO = CAREER.EMPNO)
   AND DEPTNO IS NOT NULL;
+
+-- 9. Определить номера отделов, для сотрудников которых не начислялась зарплата
+-- (ОПЕРАТОР NOT EXISTS).
+
+-- Отделы, у которых ни один сотрудник не имеет запралтных выплат.
+SELECT DEPTNO
+FROM DEPT
+WHERE NOT EXISTS(SELECT *
+                 FROM CAREER
+                          JOIN SALARY ON CAREER.EMPNO = SALARY.EMPNO
+                 WHERE CAREER.DEPTNO = DEPT.DEPTNO);
+
+-- Отделы, у которых хотя бы один сотрудник не имеет зарплатных выплат.
+SELECT DISTINCT DEPTNO
+FROM CAREER
+WHERE NOT EXISTS(SELECT *
+                 FROM SALARY
+                 WHERE SALARY.EMPNO = CAREER.EMPNO)
+  AND DEPTNO IS NOT NULL;
