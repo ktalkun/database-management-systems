@@ -83,3 +83,12 @@ FROM CAREER
          JOIN JOB ON CAREER.JOBNO = JOB.JOBNO
          JOIN SALARY ON CAREER.EMPNO = SALARY.EMPNO
 WHERE SALVALUE BETWEEN MINSALARY AND MINSALARY + 500;
+
+-- 12. Укажите сведения о заработной плате, совпадающей с минимальными
+-- окладами по должностям (с указанием этих должностей) (ВНУТРЕННЕЕ ОБЪЕДИНЕНИЕ
+-- ТАБЛИЦ).
+SELECT SALARY.*, JOBNAME
+FROM CAREER
+         JOIN JOB ON CAREER.JOBNO = JOB.JOBNO
+         JOIN SALARY ON CAREER.EMPNO = SALARY.EMPNO
+WHERE SALVALUE = MINSALARY;
