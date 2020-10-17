@@ -74,3 +74,12 @@ ORDER BY YEAR;
 SELECT EMPNAME, SALARY.*
 FROM SALARY
          JOIN EMP ON EMP.EMPNO = SALARY.EMPNO;
+
+-- 11. Укажите  сведения о начислении сотрудникам зарплаты, попадающей в вилку:
+-- минимальный оклад по должности - минимальный оклад по должности плюс пятьсот.
+-- Укажите соответствующую вилке должность (СОЕДИНЕНИЕ НЕ ПО РАВЕНСТВУ).
+SELECT SALARY.*, JOBNAME
+FROM CAREER
+         JOIN JOB ON CAREER.JOBNO = JOB.JOBNO
+         JOIN SALARY ON CAREER.EMPNO = SALARY.EMPNO
+WHERE SALVALUE BETWEEN MINSALARY AND MINSALARY + 500;
