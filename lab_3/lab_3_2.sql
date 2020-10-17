@@ -207,3 +207,11 @@ SELECT CASE
        DEPTNAME,
        DEPTADDR
 FROM DEPT;
+
+-- 14. Выдать информацию о сотрудниках из таблицы EMP, заменив отсутствие
+-- данного о дате рождения  датой '01-01-1000' (ОПЕРАТОР COALESCE).
+SELECT EMPNO,
+       EMPNAME,
+       COALESCE(BIRTHDATE, TO_DATE('01-01-1000')) AS BIRTHDATE,
+       MANAGER_ID
+FROM EMP;
