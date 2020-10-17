@@ -99,3 +99,10 @@ SELECT JOBNO, EMPNAME, DEPTNO, STARTDATE, ENDDATE
 FROM CAREER
          NATURAL JOIN EMP
 ORDER BY EMPNAME;
+
+-- 14. Найдите  сведения о карьере сотрудников с указанием вместо номера
+-- сотрудника его имени (ПРОСТОЕ ВНУТРЕННЕЕ СОЕДИНЕНИЕ).
+SELECT JOBNO, EMPNAME, DEPTNO, STARTDATE, ENDDATE
+FROM CAREER
+         JOIN EMP ON CAREER.EMPNO = EMP.EMPNO
+ORDER BY EMPNAME;
