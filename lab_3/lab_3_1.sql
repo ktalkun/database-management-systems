@@ -47,3 +47,11 @@ WHERE REGEXP_COUNT(EMPNAME, '[^ ]+') = 1;
 SELECT RTRIM(LOWER(EMPNAME), 't') AS EMPNAME, BIRTHDATE
 FROM EMP
 WHERE REGEXP_COUNT(EMPNAME, '[^ ]+') = 1;
+
+-- 7.	Выдать информацию о работниках, указав дату рождения в формате
+-- день(число), месяц(название), год(название) (ФУНКЦИИ).
+SELECT EMPNAME, TO_CHAR(BIRTHDATE, 'DD, MONTH, YEAR') AS BIRTHDATE, MANAGER_ID
+FROM EMP;
+-- Тоже, но год числом.
+SELECT EMPNAME, TO_CHAR(BIRTHDATE, 'DD, MONTH, YYYY') AS BIRTHDATE, MANAGER_ID
+FROM EMP;
