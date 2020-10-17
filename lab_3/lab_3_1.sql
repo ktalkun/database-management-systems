@@ -92,3 +92,10 @@ FROM CAREER
          JOIN JOB ON CAREER.JOBNO = JOB.JOBNO
          JOIN SALARY ON CAREER.EMPNO = SALARY.EMPNO
 WHERE SALVALUE = MINSALARY;
+
+-- 13. Найдите  сведения о карьере сотрудников с указанием вместо номера
+-- сотрудника его имени (ЕСТЕСТВЕННОЕ ОБЪЕДИНЕНИЕ ТАБЛИЦ).
+SELECT JOBNO, EMPNAME, DEPTNO, STARTDATE, ENDDATE
+FROM CAREER
+         NATURAL JOIN EMP
+ORDER BY EMPNAME;
