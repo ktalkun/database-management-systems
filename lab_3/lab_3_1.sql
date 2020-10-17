@@ -60,3 +60,11 @@ FROM EMP;
 -- “DRIVER” на “WORKER” (ФУНКЦИИ).
 SELECT JOBNO, REGEXP_REPLACE(JOBNAME, 'CLERK|DRIVER', 'WORKER'), MINSALARY
 FROM JOB;
+
+-- 9. Определите среднюю зарплату за годы, в которые были начисления не менее
+-- чем за три месяца (HAVING).
+SELECT YEAR, COUNT(MONTH) AS MONTH_COUNT, AVG(SALVALUE) AS AVERAGE_SAL
+FROM SALARY
+GROUP BY YEAR
+HAVING COUNT(MONTH) >= 3
+ORDER BY YEAR;
