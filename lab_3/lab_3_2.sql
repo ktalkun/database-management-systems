@@ -102,3 +102,24 @@ WHERE (SELECT COUNT(EMPNO)
        FROM SALARY
        WHERE SALARY.EMPNO = CAREER.EMPNO) > 0
   AND DEPTNO IS NOT NULL;
+
+-- 8. Определить номера отделов, в которых работали или работают сотрудники,
+-- имеющие начисления зарплаты (ОПЕРАТОР EXISTS).
+
+-- Отделы, в которых хотя бы один сотрудник, у которого были/есть зарплатные
+-- выплаты.
+SELECT DEPTNO
+FROM DEPT
+WHERE EXISTS(SELECT *
+             FROM CAREER
+                      JOIN SALARY ON CAREER.EMPNO = SALARY.EMPNO
+             WHERE CAREER.DEPTNO = DEPT.DEPTNO);
+
+-- Отделы, в которых хотя бы один сотрудник, у которого были/есть зарплатные
+-- выплаты.
+SELECT DISTINCT DEPTNO
+FROM CAREER
+WHERE EXISTS(SELECT *
+             FROM SALARY
+             WHERE SALARY.EMPNO = CAREER.EMPNO)
+  AND DEPTNO IS NOT NULL;
