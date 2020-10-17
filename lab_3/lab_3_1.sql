@@ -68,3 +68,9 @@ FROM SALARY
 GROUP BY YEAR
 HAVING COUNT(MONTH) >= 3
 ORDER BY YEAR;
+
+-- 10. Выведете ведомость получения зарплаты с указанием имен служащих
+-- (СОЕДИНЕНИЕ ПО РАВЕНСТВУ).
+SELECT EMPNAME, SALARY.*
+FROM SALARY
+         JOIN EMP ON EMP.EMPNO = SALARY.EMPNO;
