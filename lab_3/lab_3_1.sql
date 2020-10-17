@@ -115,3 +115,22 @@ FROM CAREER
          LEFT JOIN JOB ON CAREER.JOBNO = JOB.JOBNO
          LEFT JOIN DEPT ON CAREER.DEPTNO = DEPT.DEPTNO
 ORDER BY EMPNAME;
+
+-- 16.	Выдайте сведения о карьере сотрудников с указанием их имён. Какой вид
+-- внешнего объединения Вы использовали? Составьте запрос с использованием
+-- противоположного вида соединения. Составьте запрос с использованием полного
+-- внешнего соединения (ВНЕШНЕЕ ОБЪЕДИНЕНИЕ).
+SELECT EMPNAME, CAREER.*
+FROM CAREER
+         LEFT JOIN EMP ON CAREER.EMPNO = EMP.EMPNO
+ORDER BY EMPNAME;
+
+SELECT EMPNAME, CAREER.*
+FROM CAREER
+         RIGHT JOIN EMP ON CAREER.EMPNO = EMP.EMPNO
+ORDER BY EMPNAME;
+
+SELECT EMPNAME, CAREER.*
+FROM CAREER
+         FULL JOIN EMP ON CAREER.EMPNO = EMP.EMPNO
+ORDER BY EMPNAME;
