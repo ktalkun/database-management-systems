@@ -197,3 +197,13 @@ FROM (SELECT EMPNO,
              TRUNC(MONTHS_BETWEEN(SYSDATE, BIRTHDATE) / 12) AS AGE
       FROM EMP)
 ORDER BY GROUPS;
+
+-- 13. Перекодируйте номера отделов, добавив перед номером отдела буквы BI для
+-- номеров <=20,  буквы  LN для номеров >=30 (ОПЕРАТОР CASE).
+SELECT CASE
+           WHEN DEPTNO <= 20 THEN CONCAT('BI', DEPTNO)
+           WHEN DEPTNO >= 20 THEN CONCAT('LN', DEPTNO)
+           END AS DEPTNO,
+       DEPTNAME,
+       DEPTADDR
+FROM DEPT;
