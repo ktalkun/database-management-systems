@@ -84,3 +84,31 @@ SELECT SYSDATE,
        TRUNC(SYSDATE, 'MM') AS FIRST_DAY_OF_MONTH,
        LAST_DAY(SYSDATE)    AS LAST_DAY_OF_MONTH
 FROM DUAL;
+
+-- 8. Требуется возвратить даты начала и конца каждого из четырех кварталов
+-- данного года (ВЫБОР ВСЕХ ДАТ ГОДА, ВЫПАДАЮЩИХ НА ОПРЕДЕЛЕННЫЙ ДЕНЬ НЕДЕЛИ).
+
+-- Текущая дата усекается для каждой колонки.
+SELECT ROWNUM                AS QUARTER_NUM,
+       TO_CHAR(ADD_MONTHS(TRUNC(SYSDATE, 'YYYY'), (ROWNUM - 1) * 3),
+               'DD-MM-YYYY') AS STARTDATE,
+       TO_CHAR(ADD_MONTHS(TRUNC(SYSDATE, 'YYYY'), ROWNUM * 3) - 1,
+               'DD-MM-YYYY') AS ENDDATE
+-- FROM SYS.ODCINUMBERLIST(1,2,3,4)
+-- WHERE ROWNUM <= 4;
+FROM DUAL
+CONNECT BY ROWNUM <= 4;
+
+-- Текущая дата усекается в подзапросе и в основной запросе используется уже
+-- усечённая дата.
+SELECT QUARTER_NUM,
+       TO_CHAR(ADD_MONTHS(CURR_DATE, (QUARTER_NUM - 1) * 3),
+               'DD-MM-YYYY') AS STARTDATE,
+       TO_CHAR(ADD_MONTHS(CURR_DATE, (QUARTER_NUM - 1) * 3 - 1),
+               'DD-MM-YYYY') AS ENDDATE
+FROM (SELECT ROWNUM AS              QUARTER_NUM,
+             TRUNC(SYSDATE, 'YEAR') CURR_DATE
+--       FROM SYS.ODCINUMBERLIST(1,2,3,4)
+--       WHERE ROWNUM <= 4
+      FROM DUAL
+      CONNECT BY ROWNUM <= 4);
