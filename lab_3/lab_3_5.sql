@@ -91,3 +91,15 @@ SELECT MOVIE.NAME                                   AS MOVIE_NAME,
             'Продюссер средующего фильма такой же') AS IF_NEXT_PRODUCER_LIKE_THIS
 FROM MOVIE
          JOIN PRODUCER ON MOVIE.PRODUCER_ID = PRODUCER.ID;
+
+-- 10. Составьте запросы на выборку данных с использованием TOP-N АНАЛИЗА.
+SELECT MOVIE.ID                AS MOVIE_ID,
+       MOVIE.NAME              AS MOVIE_NAME,
+       MOVIE_GENRE.GENRE_LEVEL AS GENRE_LEVEL,
+       GENRE.NAME              AS GENRE_NAME
+FROM MOVIE
+         JOIN MOVIE_GENRE ON MOVIE.ID = MOVIE_GENRE.MOVIE_ID
+         JOIN GENRE ON MOVIE_GENRE.GENRE_ID = GENRE.ID
+ORDER BY MOVIE_GENRE.GENRE_LEVEL
+    FETCH FIRST 3 ROWS
+WITH TIES;
