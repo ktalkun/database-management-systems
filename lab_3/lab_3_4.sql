@@ -77,3 +77,10 @@ SELECT SYSDATE,
        TO_CHAR(SYSDATE, 'MI')   AS MINUTE,
        TO_CHAR(SYSDATE, 'HH24') AS HOUR
 FROM DUAL;
+
+-- 7. Требуется получить первый и последний дни текущего месяца
+-- (ОПРЕДЕЛЕНИЕ ПЕРВОГО И ПОСЛЕДНЕГО ДНЕЙ МЕСЯЦА).
+SELECT SYSDATE,
+       TRUNC(SYSDATE, 'MM') AS FIRST_DAY_OF_MONTH,
+       LAST_DAY(SYSDATE)    AS LAST_DAY_OF_MONTH
+FROM DUAL;
