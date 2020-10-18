@@ -48,3 +48,9 @@ SELECT MOVIE.ID          AS MOVIE_ID,
        PRODUCER_TMP.NAME AS PRODUCER
 FROM MOVIE
          JOIN PRODUCER_TMP ON MOVIE.PRODUCER_ID = PRODUCER_TMP.ID;
+
+-- 5. Составьте запросы на выборку данных с использованием
+-- ВСТРОЕННОГО ПРЕДСТАВЛЕНИЯ.
+SELECT ID   AS MOVIE_ID,
+       NAME AS MOVIE_NAME
+FROM (SELECT * FROM MOVIE);
