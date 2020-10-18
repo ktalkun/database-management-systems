@@ -1,109 +1,152 @@
--- Create actor table
-CREATE TABLE actor
+-- Create 'GENRE' table.
+CREATE TABLE GENRE
 (
-    id            INTEGER GENERATED ALWAYS as IDENTITY (START with 1 INCREMENT by 1) NOT NULL,
-    name          VARCHAR2(32 CHAR)                                                  NOT NULL,
-    original_name VARCHAR2(32 CHAR)                                                  NOT NULL
+    ID   INTEGER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) NOT NULL,
+    NAME VARCHAR2(50)                                                       NOT NULL
 );
-ALTER TABLE actor
-    ADD CONSTRAINT actor_pk PRIMARY KEY (id);
-CREATE INDEX ACTOR_NAME_IND ON actor (name);
-CREATE INDEX ACTOR_ORIGINAL_NAME_IND ON actor (original_name);
+ALTER TABLE GENRE
+    ADD CONSTRAINT GENRE_PK PRIMARY KEY (ID);
+CREATE INDEX GENRE_NAME_IND ON GENRE (NAME);
 
--- Create movie_actor table
-CREATE TABLE movie_actor
+-- Create 'MOVIE_GENRE' table.
+CREATE TABLE MOVIE_GENRE
 (
-    movie_id INTEGER NOT NULL,
-    actor_id INTEGER NOT NULL
+    MOVIE_ID    INTEGER  NOT NULL,
+    GENRE_ID    INTEGER  NOT NULL,
+    GENRE_LEVEL SMALLINT NOT NULL
 );
-ALTER TABLE movie_actor
-    ADD CONSTRAINT movie_actor_pk PRIMARY KEY (movie_id, actor_id);
+ALTER TABLE MOVIE_GENRE
+    ADD CONSTRAINT MOVIE_GENRE_PK PRIMARY KEY (MOVIE_ID,
+                                               GENRE_ID);
 
-
--- Create producer table
-CREATE TABLE producer
+-- Create 'ACTOR' table.
+CREATE TABLE ACTOR
 (
-    id            INTEGER GENERATED ALWAYS as IDENTITY (START with 1 INCREMENT by 1) NOT NULL,
-    name          VARCHAR2(32 CHAR)                                                  NOT NULL,
-    original_name VARCHAR2(32 CHAR)                                                  NOT NULL
+    ID            INTEGER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) NOT NULL,
+    NAME          VARCHAR2(32 CHAR)                                                  NOT NULL,
+    ORIGINAL_NAME VARCHAR2(32 CHAR)                                                  NOT NULL
 );
-ALTER TABLE producer
-    ADD CONSTRAINT producer_pk PRIMARY KEY (id);
-CREATE INDEX PRODUCER_NAME_IND ON producer (name);
-CREATE INDEX PRODUCER_ORIGINAL_NAME_IND ON producer (original_name);
+ALTER TABLE ACTOR
+    ADD CONSTRAINT ACTOR_PK PRIMARY KEY (ID);
+CREATE INDEX ACTOR_NAME_IND ON ACTOR (NAME);
+CREATE INDEX ACTOR_ORIGINAL_NAME_IND ON ACTOR (ORIGINAL_NAME);
 
--- Create storage table
-CREATE TABLE storage
+-- Create 'MOVIE_ACTOR' table.
+CREATE TABLE MOVIE_ACTOR
 (
-    id           INTEGER              NOT NULL,
-    storage_name VARCHAR2(48 CHAR)    NOT NULL,
-    storage_size INTEGER DEFAULT 4608 NOT NULL
+    MOVIE_ID INTEGER NOT NULL,
+    ACTOR_ID INTEGER NOT NULL
 );
-ALTER TABLE storage
-    ADD CONSTRAINT storage_pk PRIMARY KEY (id);
-ALTER TABLE storage
-    ADD CONSTRAINT constraint_size CHECK ( storage_size BETWEEN 1 AND 512000 );
+ALTER TABLE MOVIE_ACTOR
+    ADD CONSTRAINT MOVIE_ACTOR_PK PRIMARY KEY (MOVIE_ID, ACTOR_ID);
 
-CREATE INDEX STORAGE_NAME_IND ON storage (storage_name);
 
-CREATE SEQUENCE storage_seq START WITH 1;
+-- Create 'PRODUCER' table.
+CREATE TABLE PRODUCER
+(
+    ID            INTEGER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) NOT NULL,
+    NAME          VARCHAR2(32 CHAR)                                                  NOT NULL,
+    ORIGINAL_NAME VARCHAR2(32 CHAR)                                                  NOT NULL
+);
+ALTER TABLE PRODUCER
+    ADD CONSTRAINT PRODUCER_PK PRIMARY KEY (ID);
+CREATE INDEX PRODUCER_NAME_IND ON PRODUCER (NAME);
+CREATE INDEX PRODUCER_ORIGINAL_NAME_IND ON PRODUCER (ORIGINAL_NAME);
 
-CREATE OR REPLACE TRIGGER storage_id_trigger
+-- Create 'STORAGE_TYPE' table.
+CREATE TABLE STORAGE_TYPE
+(
+    ID           INTEGER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) NOT NULL,
+    TYPE         VARCHAR2(20)                                                       NOT NULL,
+    STORAGE_SIZE INTEGER DEFAULT 4608                                               NOT NULL
+);
+ALTER TABLE STORAGE_TYPE
+    ADD CONSTRAINT CONSTRAINT_SIZE CHECK ( STORAGE_SIZE BETWEEN 1 AND 512000 );
+ALTER TABLE STORAGE_TYPE
+    ADD CONSTRAINT STORAGE_TYPE_PK PRIMARY KEY (ID);
+
+-- Create 'STORAGE' table.
+CREATE TABLE STORAGE
+(
+    ID              INTEGER           NOT NULL,
+    STORAGE_NAME    VARCHAR2(48 CHAR) NOT NULL,
+    STORAGE_TYPE_ID INTEGER           NOT NULL
+);
+ALTER TABLE STORAGE
+    ADD CONSTRAINT STORAGE_PK PRIMARY KEY (ID);
+
+CREATE INDEX STORAGE_NAME_IND ON STORAGE (STORAGE_NAME);
+
+CREATE SEQUENCE STORAGE_SEQ START WITH 1;
+
+CREATE OR REPLACE TRIGGER STORAGE_ID_TRIGGER
     BEFORE INSERT
-    ON storage
+    ON STORAGE
     FOR EACH ROW
 BEGIN
-    SELECT storage_seq.NEXTVAL
-    INTO :new.id
-    FROM dual;
+    SELECT STORAGE_SEQ.NEXTVAL
+    INTO :NEW.ID
+    FROM DUAL;
 END;
 /
 
--- Create movie table
-CREATE TABLE movie
+-- Create 'MOVIE' table
+CREATE TABLE MOVIE
 (
-    id            INTEGER GENERATED ALWAYS as IDENTITY (START with 1 INCREMENT by 1) NOT NULL,
-    name          VARCHAR2(48 CHAR)                                                  NOT NULL,
-    original_name VARCHAR2(48 CHAR)                                                  NOT NULL,
-    release_date  INTEGER                                                            NOT NULL,
-    country       VARCHAR2(20 CHAR)                                                  NOT NULL,
-    genre_level   SMALLINT                                                           NOT NULL,
-    producer_id   INTEGER                                                            NOT NULL,
-    storage_id    INTEGER                                                            NOT NULL
+    ID            INTEGER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) NOT NULL,
+    NAME          VARCHAR2(48 CHAR)                                                  NOT NULL,
+    ORIGINAL_NAME VARCHAR2(48 CHAR)                                                  NOT NULL,
+    RELEASE_DATE  INTEGER                                                            NOT NULL,
+    COUNTRY       VARCHAR2(20 CHAR)                                                  NOT NULL,
+    PRODUCER_ID   INTEGER                                                            NOT NULL,
+    STORAGE_ID    INTEGER                                                            NOT NULL
 );
-ALTER TABLE movie
-    ADD CONSTRAINT movie_pk PRIMARY KEY (id);
-ALTER TABLE movie
-    ADD CONSTRAINT constraint_release_from CHECK (release_date >= 1883);
+ALTER TABLE MOVIE
+    ADD CONSTRAINT MOVIE_PK PRIMARY KEY (ID);
+ALTER TABLE MOVIE
+    ADD CONSTRAINT CONSTRAINT_RELEASE_FROM CHECK (RELEASE_DATE >= 1883);
 
-CREATE INDEX MOVIE_NAME_IND ON movie (name);
-CREATE INDEX MOVIE_ORIGINAL_NAME_IND ON movie (original_name);
-CREATE INDEX MOVIE_COUNTRY_IND ON movie (country);
+CREATE INDEX MOVIE_NAME_IND ON MOVIE (NAME);
+CREATE INDEX MOVIE_ORIGINAL_NAME_IND ON MOVIE (ORIGINAL_NAME);
+CREATE INDEX MOVIE_COUNTRY_IND ON MOVIE (COUNTRY);
 
-CREATE OR REPLACE TRIGGER trg_check_dates
+CREATE OR REPLACE TRIGGER TRG_CHECK_DATES
     BEFORE INSERT OR UPDATE
-    ON movie
+    ON MOVIE
     FOR EACH ROW
 BEGIN
-    IF (:new.release_date > EXTRACT(YEAR FROM SYSDATE))
+    IF (:NEW.RELEASE_DATE > EXTRACT(YEAR FROM SYSDATE))
     THEN
         RAISE_APPLICATION_ERROR(-20001,
                                 'Invalid release date: release date must be less than the current date = ' ||
-                                to_char(:new.release_date,
+                                TO_CHAR(:NEW.RELEASE_DATE,
                                         'YYYY-MM-DD HH24:MI:SS'));
     END IF;
 END;
 /
 
-ALTER TABLE movie_actor
-    ADD CONSTRAINT movie_actor_actor_fk FOREIGN KEY (actor_id)
-        REFERENCES actor (id) ON DELETE SET NULL;
-ALTER TABLE movie_actor
-    ADD CONSTRAINT movie_actor_movie_fk FOREIGN KEY (movie_id)
-        REFERENCES movie (id) ON DELETE CASCADE;
-ALTER TABLE movie
-    ADD CONSTRAINT movie_producer_fk FOREIGN KEY (producer_id)
-        REFERENCES producer (id) ON DELETE SET NULL;
-ALTER TABLE movie
-    ADD CONSTRAINT movie_storage_fk FOREIGN KEY (storage_id)
-        REFERENCES storage (id) ON DELETE CASCADE;
+ALTER TABLE MOVIE_GENRE
+    ADD CONSTRAINT MOVIE_GENRE_GENRE_FK FOREIGN KEY (GENRE_ID)
+        REFERENCES GENRE (ID);
+ALTER TABLE MOVIE_GENRE
+    ADD CONSTRAINT MOVIE_GENRE_MOVIE_FK FOREIGN KEY (MOVIE_ID)
+        REFERENCES MOVIE (ID);
+
+ALTER TABLE MOVIE_ACTOR
+    ADD CONSTRAINT MOVIE_ACTOR_ACTOR_FK FOREIGN KEY (ACTOR_ID)
+        REFERENCES ACTOR (ID) ON DELETE SET NULL;
+ALTER TABLE MOVIE_ACTOR
+    ADD CONSTRAINT MOVIE_ACTOR_MOVIE_FK FOREIGN KEY (MOVIE_ID)
+        REFERENCES MOVIE (ID) ON DELETE CASCADE;
+
+ALTER TABLE MOVIE
+    ADD CONSTRAINT MOVIE_PRODUCER_FK FOREIGN KEY (PRODUCER_ID)
+        REFERENCES PRODUCER (ID) ON DELETE SET NULL;
+ALTER TABLE MOVIE
+    ADD CONSTRAINT MOVIE_STORAGE_FK FOREIGN KEY (STORAGE_ID)
+        REFERENCES STORAGE (ID) ON DELETE CASCADE;
+
+ALTER TABLE STORAGE
+    ADD CONSTRAINT STORAGE_TYPE_STORAGE FOREIGN KEY (STORAGE_TYPE_ID)
+        REFERENCES STORAGE_TYPE (ID);
+
