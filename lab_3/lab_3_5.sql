@@ -81,3 +81,13 @@ SELECT MOVIE.NAME    AS MOVIE_NAME,
                      AS IF_NEXT_PRODUCER_LIKE_THIS
 FROM MOVIE
          JOIN PRODUCER ON MOVIE.PRODUCER_ID = PRODUCER.ID;
+
+-- 9. Составьте запросы на выборку данных с использованием ФУНКЦИИ NVL2.
+SELECT MOVIE.NAME                                   AS MOVIE_NAME,
+       PRODUCER.NAME                                AS PRODUCER_NAME,
+       NVL2(NULLIF(PRODUCER.NAME,
+                   LEAD(PRODUCER.NAME) over (ORDER BY PRODUCER.NAME)),
+            'Продюссер следующего фильма не такой же',
+            'Продюссер средующего фильма такой же') AS IF_NEXT_PRODUCER_LIKE_THIS
+FROM MOVIE
+         JOIN PRODUCER ON MOVIE.PRODUCER_ID = PRODUCER.ID;
