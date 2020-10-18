@@ -133,3 +133,39 @@ FROM (SELECT TRUNC(SYSDATE, 'YYYY') + ROWNUM - 1               AS DATE_BY_DAY,
       CONNECT BY TRUNC(SYSDATE, 'YYYY') + ROWNUM - 1 <
                  ADD_MONTHS(TRUNC(SYSDATE, 'YYYY'), 12))
 WHERE DAY = '1';
+
+-- 10. Требуется создать календарь на текущий месяц. Календарь должен иметь
+-- семь столбцов в ширину и пять строк вниз (СОЗДАНИЕ КАЛЕНДАРЯ).
+
+-- Календарь на текущий месяц (с номерами недель).
+SELECT TO_CHAR(DT, 'IW')                                     AS WEEK,
+       MAX(DECODE(TO_CHAR(DT, 'D'), '1', TO_CHAR(DT, 'DD'))) AS MON,
+       MAX(DECODE(TO_CHAR(DT, 'D'), '2', TO_CHAR(DT, 'DD'))) AS TUE,
+       MAX(DECODE(TO_CHAR(DT, 'D'), '3', TO_CHAR(DT, 'DD'))) AS WED,
+       MAX(DECODE(TO_CHAR(DT, 'D'), '4', TO_CHAR(DT, 'DD'))) AS THU,
+       MAX(DECODE(TO_CHAR(DT, 'D'), '5', TO_CHAR(DT, 'DD'))) AS FRI,
+       MAX(DECODE(TO_CHAR(DT, 'D'), '6', TO_CHAR(DT, 'DD'))) AS SAT,
+       MAX(DECODE(TO_CHAR(DT, 'D'), '7', TO_CHAR(DT, 'DD'))) AS SUN
+FROM (SELECT TRUNC(SYSDATE, 'MM') + ROWNUM - 1 AS DT
+      FROM DUAL
+      CONNECT BY TRUNC(SYSDATE, 'MM') + ROWNUM - 1 <
+                 ADD_MONTHS(TRUNC(SYSDATE, 'MM'), 1))
+GROUP BY TO_CHAR(DT, 'IW')
+ORDER BY WEEK;
+
+-- Календарь на текущий год (с номерами недель).
+SELECT TO_CHAR(DT, 'Month YYYY')                             AS MONTH,
+       TO_CHAR(DT, 'IW')                                     AS WEEK,
+       MAX(DECODE(TO_CHAR(DT, 'D'), '1', TO_CHAR(DT, 'DD'))) AS MON,
+       MAX(DECODE(TO_CHAR(DT, 'D'), '2', TO_CHAR(DT, 'DD'))) AS TUE,
+       MAX(DECODE(TO_CHAR(DT, 'D'), '3', TO_CHAR(DT, 'DD'))) AS WED,
+       MAX(DECODE(TO_CHAR(DT, 'D'), '4', TO_CHAR(DT, 'DD'))) AS THU,
+       MAX(DECODE(TO_CHAR(DT, 'D'), '5', TO_CHAR(DT, 'DD'))) AS FRI,
+       MAX(DECODE(TO_CHAR(DT, 'D'), '6', TO_CHAR(DT, 'DD'))) AS SAT,
+       MAX(DECODE(TO_CHAR(DT, 'D'), '7', TO_CHAR(DT, 'DD'))) AS SUN
+FROM (SELECT TRUNC(SYSDATE, 'YYYY') + ROWNUM - 1 AS DT
+      FROM DUAL
+      CONNECT BY TRUNC(SYSDATE, 'YYYY') + ROWNUM - 1 <
+                 ADD_MONTHS(TRUNC(SYSDATE, 'YYYY'), 12))
+GROUP BY TO_CHAR(DT, 'Month YYYY'), TO_CHAR(DT, 'IW')
+ORDER BY TO_DATE(MONTH, 'Month YYYY'), WEEK;
