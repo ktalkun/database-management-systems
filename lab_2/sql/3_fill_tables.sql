@@ -1,35 +1,63 @@
-INSERT INTO actor (name, original_name) VALUES ('Алан Рикман', 'Alan Rickman');
-INSERT INTO actor (name, original_name) VALUES ('Бенедикт Камбербэтч', 'Benedict Cumberbatch');
-INSERT INTO actor (name, original_name) VALUES ('Бенисио Дель Торо', 'Benicio del Toro');
-INSERT INTO actor (name, original_name) VALUES ('Роберт Дауни — младший', 'Robert Downey Jr.');
+INSERT INTO GENRE (NAME) VALUES ('Драма');
+INSERT INTO GENRE (NAME) VALUES ('Биография');
+INSERT INTO GENRE (NAME) VALUES ('Боевик');
+INSERT INTO GENRE (NAME) VALUES ('Триллер');
+INSERT INTO GENRE (NAME) VALUES ('Криминал');
+INSERT INTO GENRE (NAME) VALUES ('Фантастика');
+INSERT INTO GENRE (NAME) VALUES ('Приключения');
+INSERT INTO GENRE (NAME) VALUES ('Детектив');
 
-INSERT INTO producer (name, original_name) VALUES ('Джозеф Сарджент', 'Joseph Sargent');
-INSERT INTO producer (name, original_name) VALUES ('Джон Мактирнан', 'John McTiernan');
-INSERT INTO producer (name, original_name) VALUES ('Энтони Руссо', 'Anthony Russo');
-INSERT INTO producer (name, original_name) VALUES ('Брайан Сингер', 'Brian Singer');
+INSERT INTO ACTOR (NAME, ORIGINAL_NAME) VALUES ('Алан Рикман', 'Alan Rickman');
+INSERT INTO ACTOR (NAME, ORIGINAL_NAME) VALUES ('Бенедикт Камбербэтч', 'Benedict Cumberbatch');
+INSERT INTO ACTOR (NAME, ORIGINAL_NAME) VALUES ('Бенисио Дель Торо', 'Benicio del Toro');
+INSERT INTO ACTOR (NAME, ORIGINAL_NAME) VALUES ('Роберт Дауни — младший', 'Robert Downey Jr.');
+
+INSERT INTO PRODUCER (NAME, ORIGINAL_NAME) VALUES ('Джозеф Сарджент', 'Joseph Sargent');
+INSERT INTO PRODUCER (NAME, ORIGINAL_NAME) VALUES ('Джон Мактирнан', 'John McTiernan');
+INSERT INTO PRODUCER (NAME, ORIGINAL_NAME) VALUES ('Энтони Руссо', 'Anthony Russo');
+INSERT INTO PRODUCER (NAME, ORIGINAL_NAME) VALUES ('Брайан Сингер', 'Brian Singer');
+
+INSERT INTO STORAGE_TYPE (TYPE, STORAGE_SIZE) VALUES ('SSD', 262144);
+INSERT INTO STORAGE_TYPE (TYPE, STORAGE_SIZE) VALUES ('CD', 3072);
 
 INSERT ALL
-    INTO storage (storage_name, storage_size) VALUES ('SSD Kingston 2000', 262144)
-    INTO storage (storage_name, storage_size) VALUES ('SSD Samsung EVO 960', 131072)
+    INTO STORAGE (STORAGE_NAME, STORAGE_TYPE_ID) VALUES ('Kingston 2000', 1)
+    INTO STORAGE (STORAGE_NAME, STORAGE_TYPE_ID) VALUES ('Disk Delux', 2)
 SELECT *
 FROM dual;
 
-INSERT INTO movie (name, original_name, release_date, country, genre_level,producer_id, storage_id)
-VALUES ('Творение Господне', 'Something the Lord Made', 2004, 'USA', 5, 1, 1);
-INSERT INTO movie (name, original_name, release_date, country, genre_level,producer_id, storage_id)
-VALUES ('Крепкий орешек', 'Toughie', 2004, 'USA', 4, 2, 1);
-INSERT INTO movie (name, original_name, release_date, country, genre_level,producer_id, storage_id)
-VALUES ('Мстители: Финал', 'Avengers Endgame', 2019, 'USA', 5, 3, 1);
-INSERT INTO movie (name, original_name, release_date, country, genre_level,producer_id, storage_id)
-VALUES ('Мстители: Война бесконечности', 'Avengers: Infinity War', 2018, 'USA',5, 3, 2);
-INSERT INTO movie (name, original_name, release_date, country, genre_level,producer_id, storage_id)
-VALUES ('Подозрительные лица', 'Suspicious persons', 1995, 'USA', 2, 4, 1);
+INSERT INTO MOVIE (NAME, ORIGINAL_NAME, RELEASE_DATE, COUNTRY,PRODUCER_ID, STORAGE_ID)
+VALUES ('Творение Господне', 'Something the Lord Made', 2004, 'USA', 1, 1);
+INSERT INTO MOVIE (NAME, ORIGINAL_NAME, RELEASE_DATE, COUNTRY, PRODUCER_ID, STORAGE_ID)
+VALUES ('Крепкий орешек', 'Toughie', 1988, 'USA', 2, 1);
+INSERT INTO MOVIE (NAME, ORIGINAL_NAME, RELEASE_DATE, COUNTRY, PRODUCER_ID, STORAGE_ID)
+VALUES ('Мстители: Финал', 'Avengers Endgame', 2019, 'USA', 3, 1);
+INSERT INTO MOVIE (NAME, ORIGINAL_NAME, RELEASE_DATE, COUNTRY, PRODUCER_ID, STORAGE_ID)
+VALUES ('Мстители: Война бесконечности', 'Avengers: Infinity War', 2018, 'USA', 3, 2);
+INSERT INTO MOVIE (NAME, ORIGINAL_NAME, RELEASE_DATE, COUNTRY, PRODUCER_ID, STORAGE_ID)
+VALUES ('Подозрительные лица', 'Suspicious persons', 1995, 'USA', 4, 1);
 
-INSERT INTO movie_actor (movie_id, actor_id) VALUES (1, 1);
-INSERT INTO movie_actor (movie_id, actor_id) VALUES (2, 1);
-INSERT INTO movie_actor (movie_id, actor_id) VALUES (3, 2);
-INSERT INTO movie_actor (movie_id, actor_id) VALUES (4, 2);
-INSERT INTO movie_actor (movie_id, actor_id) VALUES (4, 3);
-INSERT INTO movie_actor (movie_id, actor_id) VALUES (5, 3);
-INSERT INTO movie_actor (movie_id, actor_id) VALUES (3, 4);
-INSERT INTO movie_actor (movie_id, actor_id) VALUES (4, 4);
+INSERT INTO MOVIE_GENRE (MOVIE_ID, GENRE_ID, GENRE_LEVEL) VALUES (1, 1, 5);
+INSERT INTO MOVIE_GENRE (MOVIE_ID, GENRE_ID, GENRE_LEVEL) VALUES (1, 2, 3);
+INSERT INTO MOVIE_GENRE (MOVIE_ID, GENRE_ID, GENRE_LEVEL) VALUES (2, 3, 5);
+INSERT INTO MOVIE_GENRE (MOVIE_ID, GENRE_ID, GENRE_LEVEL) VALUES (2, 4, 5);
+INSERT INTO MOVIE_GENRE (MOVIE_ID, GENRE_ID, GENRE_LEVEL) VALUES (2, 5, 4);
+INSERT INTO MOVIE_GENRE (MOVIE_ID, GENRE_ID, GENRE_LEVEL) VALUES (3, 3, 4);
+INSERT INTO MOVIE_GENRE (MOVIE_ID, GENRE_ID, GENRE_LEVEL) VALUES (3, 7, 2);
+INSERT INTO MOVIE_GENRE (MOVIE_ID, GENRE_ID, GENRE_LEVEL) VALUES (3, 6, 5);
+INSERT INTO MOVIE_GENRE (MOVIE_ID, GENRE_ID, GENRE_LEVEL) VALUES (3, 1, 3);
+INSERT INTO MOVIE_GENRE (MOVIE_ID, GENRE_ID, GENRE_LEVEL) VALUES (4, 6, 5);
+INSERT INTO MOVIE_GENRE (MOVIE_ID, GENRE_ID, GENRE_LEVEL) VALUES (4, 7, 2);
+INSERT INTO MOVIE_GENRE (MOVIE_ID, GENRE_ID, GENRE_LEVEL) VALUES (4, 3, 4);
+INSERT INTO MOVIE_GENRE (MOVIE_ID, GENRE_ID, GENRE_LEVEL) VALUES (5, 4, 5);
+INSERT INTO MOVIE_GENRE (MOVIE_ID, GENRE_ID, GENRE_LEVEL) VALUES (5, 5, 3);
+INSERT INTO MOVIE_GENRE (MOVIE_ID, GENRE_ID, GENRE_LEVEL) VALUES (5, 8, 4);
+
+INSERT INTO MOVIE_ACTOR (MOVIE_ID, ACTOR_ID) VALUES (1, 1);
+INSERT INTO MOVIE_ACTOR (MOVIE_ID, ACTOR_ID) VALUES (2, 1);
+INSERT INTO MOVIE_ACTOR (MOVIE_ID, ACTOR_ID) VALUES (3, 2);
+INSERT INTO MOVIE_ACTOR (MOVIE_ID, ACTOR_ID) VALUES (4, 2);
+INSERT INTO MOVIE_ACTOR (MOVIE_ID, ACTOR_ID) VALUES (4, 3);
+INSERT INTO MOVIE_ACTOR (MOVIE_ID, ACTOR_ID) VALUES (5, 3);
+INSERT INTO MOVIE_ACTOR (MOVIE_ID, ACTOR_ID) VALUES (3, 4);
+INSERT INTO MOVIE_ACTOR (MOVIE_ID, ACTOR_ID) VALUES (4, 4);
