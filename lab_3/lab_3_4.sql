@@ -12,3 +12,22 @@ SELECT STARTDATE,
 FROM CAREER
          JOIN EMP ON CAREER.EMPNO = EMP.EMPNO
 WHERE EMPNAME = 'JOHN KLINTON';
+
+-- 2. Требуется найти разность между двумя датами и представить результат в днях.
+-- Вычислите разницу в днях между датами приема на работу сотрудников
+-- JOHN MARTIN и ALEX BOUSH (ОПРЕДЕЛЕНИЕ КОЛИЧЕСТВА ДНЕЙ МЕЖДУ ДВУМЯ ДАТАМИ).
+SELECT MARTIN_STARTDATE,
+       BOUSH_STARTDATE,
+       ABS(MARTIN_STARTDATE - BOUSH_STARTDATE) AS DAYS_BETWEEN_DATES
+FROM (SELECT STARTDATE AS MARTIN_STARTDATE
+      FROM CAREER
+               JOIN EMP ON CAREER.EMPNO = EMP.EMPNO
+      WHERE EMPNAME = 'JOHN MARTIN'),
+     (SELECT STARTDATE AS BOUSH_STARTDATE
+      FROM CAREER
+               JOIN EMP ON CAREER.EMPNO = EMP.EMPNO
+      WHERE EMPNAME = 'ALEX BOUSH');
+
+SELECT STARTDATE, EMPNAME
+FROM CAREER
+         JOIN EMP ON CAREER.EMPNO = EMP.EMPNO;
