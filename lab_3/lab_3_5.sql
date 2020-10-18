@@ -54,3 +54,12 @@ FROM MOVIE
 SELECT ID   AS MOVIE_ID,
        NAME AS MOVIE_NAME
 FROM (SELECT * FROM MOVIE);
+
+-- 6. Составьте запросы на выборку данных с использованием
+-- НЕКОРРЕЛИРОВАННОГО ЗАПРОСА.
+SELECT MOVIE.ID   AS MOVIE_ID,
+       MOVIE.NAME AS MOVIE_NAME
+FROM MOVIE
+WHERE MOVIE.STORAGE_ID = (SELECT ID
+                          FROM STORAGE
+                          WHERE STORAGE_NAME = 'Kingston 2000');
