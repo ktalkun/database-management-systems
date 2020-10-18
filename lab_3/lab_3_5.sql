@@ -63,3 +63,13 @@ FROM MOVIE
 WHERE MOVIE.STORAGE_ID = (SELECT ID
                           FROM STORAGE
                           WHERE STORAGE_NAME = 'Kingston 2000');
+
+-- 7. Составьте запросы на выборку данных с использованием
+-- КОРРЕЛИРОВАННОГО ЗАПРОСА.
+SELECT MOVIE.ID   AS MOVIE_ID,
+       MOVIE.NAME AS MOVIE_NAME
+FROM MOVIE
+WHERE MOVIE.STORAGE_ID = (SELECT ID
+                          FROM STORAGE
+                          WHERE MOVIE.STORAGE_ID = STORAGE.ID
+                            AND STORAGE_NAME = 'Kingston 2000');
