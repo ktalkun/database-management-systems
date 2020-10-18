@@ -59,3 +59,10 @@ SELECT STARTDATE,
                 'undefined') AS STARTDATE_DAYS_BETWEEN_FOR_NEAR_EMPLOYEE
 FROM CAREER
 WHERE DEPTNO = 20;
+
+-- 5. Требуется подсчитать количество дней в году по столбцу START_DATE
+-- (ОПРЕДЕЛЕНИЕ КОЛИЧЕСТВА ДНЕЙ В ГОДУ).
+SELECT STARTDATE,
+       ADD_MONTHS(TRUNC(STARTDATE, 'YYYY'), 12) - TRUNC(STARTDATE, 'YYYY')
+           AS DAYS_PER_YEAR_OF_STARTDATE
+FROM CAREER;
