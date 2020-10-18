@@ -73,3 +73,11 @@ WHERE MOVIE.STORAGE_ID = (SELECT ID
                           FROM STORAGE
                           WHERE MOVIE.STORAGE_ID = STORAGE.ID
                             AND STORAGE_NAME = 'Kingston 2000');
+
+-- 8. Составьте запросы на выборку данных с использованием ФУНКЦИИ NULLIF.
+SELECT MOVIE.NAME    AS MOVIE_NAME,
+       PRODUCER.NAME AS PRODUCER_NAME,
+       NULLIF(PRODUCER.NAME, LEAD(PRODUCER.NAME) over (ORDER BY PRODUCER.NAME))
+                     AS IF_NEXT_PRODUCER_LIKE_THIS
+FROM MOVIE
+         JOIN PRODUCER ON MOVIE.PRODUCER_ID = PRODUCER.ID;
