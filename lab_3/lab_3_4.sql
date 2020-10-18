@@ -112,3 +112,24 @@ FROM (SELECT ROWNUM AS              QUARTER_NUM,
 --       WHERE ROWNUM <= 4
       FROM DUAL
       CONNECT BY ROWNUM <= 4);
+
+-- 9. Требуется найти все даты года, соответствующие заданному дню недели.
+-- Сформируйте список понедельников текущего года.
+
+-- Запрос привязан к русском у языку
+SELECT TO_CHAR(DATE_BY_DAY, 'DD-MM-YYYY') AS DATE_BY_DAY
+FROM (SELECT TRUNC(SYSDATE, 'YYYY') + ROWNUM - 1                 AS DATE_BY_DAY,
+             TO_CHAR(TRUNC(SYSDATE, 'YYYY') + ROWNUM - 1, 'DAY') AS DAY
+      FROM DUAL
+      CONNECT BY TRUNC(SYSDATE, 'YYYY') + ROWNUM - 1 <
+                 ADD_MONTHS(TRUNC(SYSDATE, 'YYYY'), 12))
+WHERE DAY = 'ПОНЕДЕЛЬНИК';
+
+-- Запрос не привязан к русскому языка
+SELECT TO_CHAR(DATE_BY_DAY, 'DD-MM-YYYY') AS DATE_BY_DAY
+FROM (SELECT TRUNC(SYSDATE, 'YYYY') + ROWNUM - 1               AS DATE_BY_DAY,
+             TO_CHAR(TRUNC(SYSDATE, 'YYYY') + ROWNUM - 1, 'D') AS DAY
+      FROM DUAL
+      CONNECT BY TRUNC(SYSDATE, 'YYYY') + ROWNUM - 1 <
+                 ADD_MONTHS(TRUNC(SYSDATE, 'YYYY'), 12))
+WHERE DAY = '1';
