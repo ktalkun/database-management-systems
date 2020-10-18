@@ -48,3 +48,14 @@ FROM (SELECT STARTDATE AS MARTIN_STARTDATE
       FROM CAREER
                JOIN EMP ON CAREER.EMPNO = EMP.EMPNO
       WHERE EMPNAME = 'ALEX BOUSH');
+
+-- 4. Требуется определить интервал времени в днях между двумя датами.
+-- Для каждого сотрудника 20-го отдела найти сколько дней прошло между датой
+-- его приема на работу и датой приема на работу следующего сотрудника
+-- (ОПРЕДЕЛЕНИЕ ИНТЕРВАЛА ВРЕМЕНИ МЕЖДУ ТЕКУЩЕЙ И СЛЕДУЮЩЕЙ ЗАПИСЯМИ).
+SELECT STARTDATE,
+       COALESCE(TO_CHAR(ABS(
+                   STARTDATE - LEAD(STARTDATE) OVER (ORDER BY STARTDATE))),
+                'undefined') AS STARTDATE_DAYS_BETWEEN_FOR_NEAR_EMPLOYEE
+FROM CAREER
+WHERE DEPTNO = 20;
