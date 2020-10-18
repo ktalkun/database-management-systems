@@ -66,3 +66,14 @@ SELECT STARTDATE,
        ADD_MONTHS(TRUNC(STARTDATE, 'YYYY'), 12) - TRUNC(STARTDATE, 'YYYY')
            AS DAYS_PER_YEAR_OF_STARTDATE
 FROM CAREER;
+
+-- 6. Требуется разложить текущую дату на день, месяц, год, секунды, минуты,
+-- часы. Результаты вернуть в численном виде (ИЗВЛЕЧЕНИЕ ЕДИНИЦ ВРЕМЕНИ ИЗ ДАТЫ).
+SELECT SYSDATE,
+       TO_CHAR(SYSDATE, 'DD')   AS DAY,
+       TO_CHAR(SYSDATE, 'MM')   AS MONTH,
+       TO_CHAR(SYSDATE, 'YYYY') AS YEAR,
+       TO_CHAR(SYSDATE, 'SS')   AS SECOND,
+       TO_CHAR(SYSDATE, 'MI')   AS MINUTE,
+       TO_CHAR(SYSDATE, 'HH24') AS HOUR
+FROM DUAL;
