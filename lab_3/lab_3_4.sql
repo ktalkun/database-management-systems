@@ -28,10 +28,6 @@ FROM (SELECT STARTDATE AS MARTIN_STARTDATE
                JOIN EMP ON CAREER.EMPNO = EMP.EMPNO
       WHERE EMPNAME = 'ALEX BOUSH');
 
-SELECT STARTDATE, EMPNAME
-FROM CAREER
-         JOIN EMP ON CAREER.EMPNO = EMP.EMPNO;
-
 -- 3. Требуется найти разность между двумя датами в месяцах и в годах
 -- (ОПРЕДЕЛЕНИЕ КОЛИЧЕСТВА МЕСЯЦЕВ ИЛИ ЛЕТ МЕЖДУ ДАТАМИ).
 SELECT MARTIN_STARTDATE,
