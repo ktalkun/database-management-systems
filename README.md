@@ -19,3 +19,14 @@ GRANT ALL PRIVILEGES TO USER_NAME;
 
 Where `USER_NAME` the name of user and `PASSWORD` the password of user.
 Last row grant all privileges to new user.
+
+## Oracle database connection
+To get connection string you need folowing information:
++ Host: `localhost`
++ Port: `1521`
++ SID: `ORCLDB`
++ DRIVER: `Thin`
++ User: `USER_NAME`
++ Password: `PASSWORD`
+
+Result connection string `jdbc:oracle:thin:@localhost:1521:ORCLCDB`.
