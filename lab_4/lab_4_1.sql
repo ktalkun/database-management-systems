@@ -20,3 +20,11 @@ SET MINSALARY =
             END
 WHERE JOBNAME = 'CLERK'
    OR JOBNAME = 'FINANCIAL DIRECTOR';
+
+-- 4. Установите минимальную зарплату финансового директора равной 90% от
+-- зарплаты исполнительного директора.
+UPDATE JOB
+SET MINSALARY = (SELECT MINSALARY
+                 FROM JOB
+                 WHERE JOBNAME = 'EXECUTIVE DIRECTOR') * 0.9
+WHERE JOBNAME = 'FINANCIAL DIRECTOR';
