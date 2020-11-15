@@ -56,3 +56,9 @@ SET DEPTADDR = (SELECT DEPTADDR
                 FROM DEPT
                 WHERE DEPTNAME = 'SALES')
 WHERE DEPTNAME = 'RESEARCH';
+
+-- 9. Добавьте нового сотрудника в таблицу EMP. Его имя и фамилия должны
+-- совпадать с Вашими, записанными латинскими буквами согласно паспорту, дата
+-- рождения также совпадает с Вашей.
+INSERT INTO EMP (EMPNO, EMPNAME, BIRTHDATE, MANAGER_ID)
+VALUES (7532, 'KIRYL TALKUN', '16/09/1999', 7790);
