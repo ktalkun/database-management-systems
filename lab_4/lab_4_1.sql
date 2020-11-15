@@ -48,3 +48,11 @@ WHERE LENGTH(EMPNAME) - LENGTH(REPLACE(EMPNAME, ' ', '')) + 1 = 2;
 -- 7. Приведите в таблице EMP имена служащих к верхнему регистру.
 UPDATE EMP
 SET EMPNAME = UPPER(EMPNAME);
+
+-- 8. Перенесите отдел исследований (RESEARCH) в тот же город, в котором
+-- расположен отдел продаж (SALES).
+UPDATE DEPT
+SET DEPTADDR = (SELECT DEPTADDR
+                FROM DEPT
+                WHERE DEPTNAME = 'SALES')
+WHERE DEPTNAME = 'RESEARCH';
