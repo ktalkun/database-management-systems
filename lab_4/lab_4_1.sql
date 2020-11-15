@@ -44,3 +44,7 @@ WHERE REGEXP_LIKE(EMPNAME, '^\w+ \w+$');
 UPDATE EMP
 SET EMPNAME = INITCAP(EMPNAME)
 WHERE LENGTH(EMPNAME) - LENGTH(REPLACE(EMPNAME, ' ', '')) + 1 = 2;
+
+-- 7. Приведите в таблице EMP имена служащих к верхнему регистру.
+UPDATE EMP
+SET EMPNAME = UPPER(EMPNAME);
