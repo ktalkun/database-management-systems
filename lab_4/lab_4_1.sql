@@ -157,3 +157,17 @@ WHERE JOBNO NOT IN (SELECT DISTINCT JOBNO
                        OR ENDDATE > SYSDATE);
 
 DROP TABLE TMP_JOB;
+
+-- 15. Начислите зарплату в размере 120% минимального должностного оклада всем
+-- сотрудникам, работающим на предприятии. Зарплату начислять по должности,
+-- занимаемой сотрудником в настоящий момент и отнести ее на прошлый месяц
+-- относительно текущей даты.
+INSERT INTO SALARY (EMPNO, MONTH, YEAR, SALVALUE)
+SELECT EMPNO,
+       TO_CHAR(ADD_MONTHS(SYSDATE, -1), 'MM'),
+       TO_CHAR(ADD_MONTHS(SYSDATE, -1), 'YYYY'),
+       MINSALARY * 1.2
+FROM CAREER
+         JOIN JOB ON CAREER.JOBNO = JOB.JOBNO
+WHERE ENDDATE IS NULL
+   OR ENDDATE > SYSDATE;
