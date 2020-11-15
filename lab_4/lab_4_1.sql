@@ -99,3 +99,26 @@ WHERE JOBNAME = 'CLERK'
   AND ENDDATE IS NULL;
 
 DROP TABLE TMP_EMP;
+
+-- 12. Добавьте в таблицу TMP_EMP информацию о тех сотрудниках, которые уже не
+-- работают на предприятии, а в период работы занимали только одну должность.
+CREATE TABLE TMP_EMP AS
+SELECT *
+FROM EMP;
+
+DELETE
+FROM TMP_EMP;
+
+INSERT INTO TMP_EMP (EMPNO, EMPNAME, BIRTHDATE, MANAGER_ID)
+SELECT EMPNO, EMPNAME, BIRTHDATE, MANAGER_ID
+FROM EMP
+WHERE EMPNO IN (SELECT CAREER.EMPNO
+                FROM CAREER
+                         RIGHT JOIN (SELECT CAREER.EMPNO
+                                     FROM CAREER
+                                     GROUP BY CAREER.EMPNO
+                                     HAVING COUNT(CAREER.EMPNO) = 1) RIGHT_CAREER
+                                    ON CAREER.EMPNO = RIGHT_CAREER.EMPNO
+                WHERE ENDDATE < SYSDATE);
+
+DROP TABLE TMP_EMP;
