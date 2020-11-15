@@ -138,3 +138,22 @@ WHERE EMPNO IN (SELECT DISTINCT EMPNO
                 FROM CAREER
                 WHERE STARTDATE IS NULL
                    OR STARTDATE > SYSDATE);
+
+-- 14. Удалите все записи из таблицы TMP_JOB и добавьте в нее информацию по тем
+-- специальностям, которые не используются в настоящий момент на предприятии.
+CREATE TABLE TMP_JOB AS
+SELECT *
+FROM JOB;
+
+DELETE
+FROM TMP_JOB;
+
+INSERT INTO TMP_JOB (JOBNO, JOBNAME, MINSALARY)
+SELECT JOBNO, JOBNAME, MINSALARY
+FROM JOB
+WHERE JOBNO NOT IN (SELECT DISTINCT JOBNO
+                    FROM CAREER
+                    WHERE ENDDATE IS NULL
+                       OR ENDDATE > SYSDATE);
+
+DROP TABLE TMP_JOB;
