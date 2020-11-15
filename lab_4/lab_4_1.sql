@@ -195,3 +195,17 @@ WHERE EMPNO NOT IN (SELECT DISTINCT EMPNO
                     FROM CAREER
                     WHERE ENDDATE IS NULL
                        OR ENDDATE > SYSDATE);
+
+-- 19. Удалите записи из таблицы EMP для тех сотрудников, которые никогда не
+-- приступали к работе на предприятии.
+DELETE
+FROM EMP
+WHERE EMPNO NOT IN (SELECT DISTINCT EMPNO
+                    FROM CAREER);
+
+DELETE
+FROM EMP
+WHERE EMPNO NOT IN (SELECT DISTINCT EMPNO
+                    FROM CAREER
+                    WHERE STARTDATE IS NULL
+                       OR STARTDATE > SYSDATE);
