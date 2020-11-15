@@ -28,3 +28,9 @@ SET MINSALARY = (SELECT MINSALARY
                  FROM JOB
                  WHERE JOBNAME = 'EXECUTIVE DIRECTOR') * 0.9
 WHERE JOBNAME = 'FINANCIAL DIRECTOR';
+
+-- 5. Приведите в таблице EMP имена служащих, начинающиеся на букву 'J',
+-- к нижнему регистру.
+UPDATE EMP
+SET EMPNAME = LOWER(EMPNAME)
+WHERE SUBSTR(EMPNAME, 0, 1) = 'J';
