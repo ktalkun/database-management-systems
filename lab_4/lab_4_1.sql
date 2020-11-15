@@ -176,3 +176,12 @@ WHERE ENDDATE IS NULL
 DELETE
 FROM SALARY
 WHERE YEAR = TO_CHAR(ADD_MONTHS(SYSDATE, -12), 'YYYY');
+
+-- 17. Удалите информацию о карьере сотрудников, которые в настоящий момент
+-- уже не работают на предприятии, но когда-то работали.
+DELETE
+FROM CAREER
+WHERE EMPNO NOT IN (SELECT DISTINCT EMPNO
+                    FROM CAREER
+                    WHERE ENDDATE IS NULL
+                       OR ENDDATE > SYSDATE);
