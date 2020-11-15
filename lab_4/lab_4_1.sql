@@ -77,3 +77,25 @@ VALUES ((SELECT JOBNO
          WHERE DEPTNAME = 'ACCOUNTING'),
         SYSDATE,
         NULL);
+
+-- 11. Удалите все записи из таблицы TMP_EMP. Добавьте в нее информацию о
+-- сотрудниках, которые работают клерками в настоящий момент.
+CREATE TABLE TMP_EMP AS
+SELECT *
+FROM EMP;
+
+DELETE
+FROM TMP_EMP;
+
+INSERT INTO TMP_EMP (EMPNO, EMPNAME, BIRTHDATE, MANAGER_ID)
+SELECT EMP.EMPNO,
+       EMP.EMPNAME,
+       EMP.BIRTHDATE,
+       EMP.MANAGER_ID
+FROM EMP
+         JOIN CAREER ON EMP.EMPNO = CAREER.EMPNO
+         JOIN JOB ON CAREER.JOBNO = JOB.JOBNO
+WHERE JOBNAME = 'CLERK'
+  AND ENDDATE IS NULL;
+
+DROP TABLE TMP_EMP;
