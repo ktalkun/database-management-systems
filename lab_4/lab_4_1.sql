@@ -62,3 +62,18 @@ WHERE DEPTNAME = 'RESEARCH';
 -- рождения также совпадает с Вашей.
 INSERT INTO EMP (EMPNO, EMPNAME, BIRTHDATE, MANAGER_ID)
 VALUES (7532, 'KIRYL TALKUN', '16/09/1999', 7790);
+
+-- 10. Определите нового сотрудника (см. предыдущее задание) на работу в
+-- бухгалтерию (отдел ACCOUNTING) начиная с текущей даты.
+INSERT INTO CAREER (JOBNO, EMPNO, DEPTNO, STARTDATE, ENDDATE)
+VALUES ((SELECT JOBNO
+         FROM JOB
+         WHERE JOBNAME = 'CLERK'),
+        (SELECT EMPNO
+         FROM EMP
+         WHERE EMPNAME = 'KIRYL TALKUN'),
+        (SELECT DEPTNO
+         FROM DEPT
+         WHERE DEPTNAME = 'ACCOUNTING'),
+        SYSDATE,
+        NULL);
