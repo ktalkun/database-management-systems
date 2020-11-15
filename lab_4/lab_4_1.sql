@@ -34,3 +34,13 @@ WHERE JOBNAME = 'FINANCIAL DIRECTOR';
 UPDATE EMP
 SET EMPNAME = LOWER(EMPNAME)
 WHERE SUBSTR(EMPNAME, 0, 1) = 'J';
+
+-- 6. Измените в таблице EMP имена служащих, состоящие из двух слов, так, чтобы
+-- оба слова в имени начинались с заглавной буквы, а продолжались прописными.
+UPDATE EMP
+SET EMPNAME = INITCAP(EMPNAME)
+WHERE REGEXP_LIKE(EMPNAME, '^\w+ \w+$');
+
+UPDATE EMP
+SET EMPNAME = INITCAP(EMPNAME)
+WHERE LENGTH(EMPNAME) - LENGTH(REPLACE(EMPNAME, ' ', '')) + 1 = 2;
