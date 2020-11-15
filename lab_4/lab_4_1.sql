@@ -185,3 +185,13 @@ WHERE EMPNO NOT IN (SELECT DISTINCT EMPNO
                     FROM CAREER
                     WHERE ENDDATE IS NULL
                        OR ENDDATE > SYSDATE);
+
+-- 18. Удалите информацию о начисленной зарплате сотрудников, которые
+-- в настоящий момент уже не работают на предприятии (можно использовать
+-- результаты работы предыдущего запроса)
+DELETE
+FROM SALARY
+WHERE EMPNO NOT IN (SELECT DISTINCT EMPNO
+                    FROM CAREER
+                    WHERE ENDDATE IS NULL
+                       OR ENDDATE > SYSDATE);
